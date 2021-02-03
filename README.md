@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=frostzt" alt="frostzt" /></a> </p>
 
-- 🌱 I’m currently learning **Reactjs**
+- 🌱 I’m currently learning **Reactjs**, **All about AI and ML**
 
 - 💬 Ask me about **MongoDB, Nodejs, JS, GSAP, Expressjs**
 
