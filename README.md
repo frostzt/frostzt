@@ -5,9 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=frostzt" alt="frostzt" /></a> </p>
 
-- 🌱 I’m currently learning **Reactjs**, **All about AI and ML**
-
-- 💬 Ask me about **MongoDB, Nodejs, JS, GSAP, Expressjs**
+- 🌱 I’m currently learning **Threejs**, **All about AI and ML**
 
 - 📫 How to reach me **aidenfrostbite@gmail.com**
 
