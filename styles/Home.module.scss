@@ -1,0 +1,18 @@
+.header {
+  width: 100vw;
+  height: 100vh;
+  border: 6rem solid white;
+  background-color: var(--background);
+
+  .greeting {
+    .imageContainer {
+      width: 50rem;
+      height: 50rem;
+      position: relative;
+
+      &__image {
+        width: 100% !important;
+      }
+    }
+  }
+}
