@@ -27,8 +27,9 @@ export default function Home() {
               objectFit="contain"
             />
           </div>
+          <div className={styles.hi}>HI</div>
         </motion.div>
-        <motion.div className={styles.name}></motion.div>
+        <motion.div className={styles.name}>I am Sourav!</motion.div>
       </motion.header>
     </main>
   );

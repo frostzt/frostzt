@@ -11,8 +11,11 @@ html {
 }
 
 body {
+  font-family: "Lato", sans-serif;
 }
 
 :root {
   --background: #16191c;
+
+  --text-color: #fff;
 }

@@ -4,15 +4,38 @@
   border: 6rem solid white;
   background-color: var(--background);
 
+  // Align the items
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
   .greeting {
+    display: flex;
+    margin-right: 22rem;
+    align-items: center;
+    justify-content: center;
+
     .imageContainer {
-      width: 50rem;
-      height: 50rem;
+      width: 60rem;
+      height: 60rem;
       position: relative;
 
       &__image {
         width: 100% !important;
       }
     }
+
+    .hi {
+      font-size: 54rem;
+      font-weight: 900;
+      color: var(--text-color);
+    }
+  }
+
+  .name {
+    font-size: 5rem;
+    letter-spacing: 1.27em;
+    color: var(--text-color);
   }
 }
