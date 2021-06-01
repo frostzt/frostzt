@@ -1,11 +1,22 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
 // Styles
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
+  const headerControl = useAnimation();
+
+  const sequence = async () => {
+    await headerControl.start({ border: "6rem solid #fff" }, { duration: 1 });
+  };
+
+  useEffect(() => {
+    sequence();
+  });
+
   return (
     <main className={styles.main}>
       <Head>
@@ -16,7 +27,13 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <motion.header className={styles.header}>
+      <motion.header
+        initial={{
+          border: "none",
+        }}
+        animate={headerControl}
+        className={styles.header}
+      >
         <motion.div className={styles.greeting}>
           <div className={styles.imageContainer}>
             <Image
