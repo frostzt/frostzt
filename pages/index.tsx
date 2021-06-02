@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   const aboutSequence = async () => {
-    paragraphControl.start({ opacity: 1, y: 0 }, { duration: 1, delay: 0.4 });
+    paragraphControl.start({ opacity: 1, x: 0 }, { duration: 1, delay: 0.4 });
   };
 
   // Scroll snapping
@@ -125,21 +125,21 @@ export default function Home() {
       <div className={styles.about} ref={aboutRef}>
         <div className={styles.about__container}>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
             animate={paragraphControl}
           >
             DEVELOPER AND
           </motion.p>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
             animate={paragraphControl}
           >
             DESIGNER WHO LIKES
           </motion.p>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
             animate={paragraphControl}
           >
@@ -147,14 +147,14 @@ export default function Home() {
             <span style={{ color: "var(--primary-color)" }}>.</span>
           </motion.p>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
             animate={paragraphControl}
           >
             AND CREATE RANDOM
           </motion.p>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
             animate={paragraphControl}
           >
