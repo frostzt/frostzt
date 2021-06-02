@@ -15,18 +15,35 @@ export default function Home() {
   const mainContainer = useRef<HTMLNull>(null);
 
   // Intersection Observer
-  const [aboutRef, aboutInView] = useInView({ threshold: 0.1 });
+  const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
 
   // Animation Controls
   const headerControl = useAnimation();
   const greetingControl = useAnimation();
   const nameControl = useAnimation();
 
+  const paragraphControl = useAnimation();
+
   // Sequences
   const sequence = async () => {
-    await headerControl.start({ border: "6rem solid #fff" }, { duration: 1 });
-    await greetingControl.start({ opacity: 1, y: 0 }, { duration: 0.5 });
-    return await nameControl.start({ opacity: 1, y: 0 }, { duration: 0.5 });
+    await headerControl.start(
+      { border: "6rem solid #fff", opacity: 1 },
+      { duration: 1 }
+    );
+    await greetingControl.start({ opacity: 1, y: 0, x: 0 }, { duration: 0.5 });
+    return await nameControl.start(
+      { opacity: 1, y: 0, x: 0 },
+      { duration: 0.5 }
+    );
+  };
+
+  const headerExitSequence = async () => {
+    greetingControl.start({ opacity: 0, x: 200 }, { duration: 0.3 });
+    nameControl.start({ opacity: 0, x: 200 }, { duration: 0.3 });
+    return await headerControl.start(
+      { border: "0rem solid #fff", opacity: 0 },
+      { duration: 1 }
+    );
   };
 
   // Scroll snapping
@@ -44,12 +61,20 @@ export default function Home() {
     snapElement?.bind();
   };
 
+  // Play animation sequence and bind scroll snapping
   useEffect(() => {
     sequence();
     bindScrollSnap();
   }, []);
 
-  console.log(aboutInView);
+  // Play exit when scrolled
+  useEffect(() => {
+    if (aboutInView) {
+      headerExitSequence();
+    } else {
+      sequence();
+    }
+  }, [aboutInView]);
 
   return (
     <div ref={mainContainer} className={styles.container}>
@@ -92,7 +117,21 @@ export default function Home() {
           I am Sourav!
         </motion.div>
       </motion.div>
-      <div className={styles.about} ref={aboutRef}></div>
+      <div className={styles.about} ref={aboutRef}>
+        <div className={styles.about__container}>
+          <motion.p className={styles.paragraph}>DEVELOPER AND</motion.p>
+          <motion.p className={styles.paragraph}>DESIGNER WHO LIKES</motion.p>
+          <motion.p className={styles.paragraph}>
+            TO LEARN NEW THINGS
+            <span style={{ color: "var(--primary-color)" }}>.</span>
+          </motion.p>
+          <motion.p className={styles.paragraph}>AND CREATE RANDOM</motion.p>
+          <motion.p className={styles.paragraph}>
+            STUFF FOR FUN
+            <span style={{ color: "var(--primary-color)" }}>!</span>
+          </motion.p>
+        </div>
+      </div>
     </div>
   );
 }

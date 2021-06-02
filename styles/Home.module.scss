@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
+  overflow-x: hidden;
   position: absolute;
 }
 
@@ -62,7 +63,18 @@
 }
 
 .about {
-  height: 100vh;
   width: 100vw;
-  background-color: blue;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+
+  &__container {
+    .paragraph {
+      font-size: 15rem;
+      font-weight: 900;
+      color: var(--text-color);
+    }
+  }
 }
