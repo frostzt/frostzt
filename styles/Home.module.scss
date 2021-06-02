@@ -10,7 +10,6 @@
   &__replace {
     width: 100vw;
     height: 100vh;
-    background-color: var(--background);
   }
 
   // Make the page permanantly on top
@@ -22,7 +21,6 @@
   width: 100vw;
   height: 100vh;
   border: 6rem solid white;
-  background-color: var(--background);
 
   // Align the items
   display: flex;
@@ -68,7 +66,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background);
 
   &__container {
     .paragraph {

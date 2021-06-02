@@ -46,6 +46,10 @@ export default function Home() {
     );
   };
 
+  const aboutSequence = async () => {
+    paragraphControl.start({ opacity: 1, y: 0 }, { duration: 1, delay: 0.4 });
+  };
+
   // Scroll snapping
   const bindScrollSnap = () => {
     let snapElement;
@@ -71,6 +75,7 @@ export default function Home() {
   useEffect(() => {
     if (aboutInView) {
       headerExitSequence();
+      aboutSequence();
     } else {
       sequence();
     }
@@ -119,14 +124,40 @@ export default function Home() {
       </motion.div>
       <div className={styles.about} ref={aboutRef}>
         <div className={styles.about__container}>
-          <motion.p className={styles.paragraph}>DEVELOPER AND</motion.p>
-          <motion.p className={styles.paragraph}>DESIGNER WHO LIKES</motion.p>
-          <motion.p className={styles.paragraph}>
+          <motion.p
+            initial={{ opacity: 0 }}
+            className={styles.paragraph}
+            animate={paragraphControl}
+          >
+            DEVELOPER AND
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            className={styles.paragraph}
+            animate={paragraphControl}
+          >
+            DESIGNER WHO LIKES
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            className={styles.paragraph}
+            animate={paragraphControl}
+          >
             TO LEARN NEW THINGS
             <span style={{ color: "var(--primary-color)" }}>.</span>
           </motion.p>
-          <motion.p className={styles.paragraph}>AND CREATE RANDOM</motion.p>
-          <motion.p className={styles.paragraph}>
+          <motion.p
+            initial={{ opacity: 0 }}
+            className={styles.paragraph}
+            animate={paragraphControl}
+          >
+            AND CREATE RANDOM
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            className={styles.paragraph}
+            animate={paragraphControl}
+          >
             STUFF FOR FUN
             <span style={{ color: "var(--primary-color)" }}>!</span>
           </motion.p>
