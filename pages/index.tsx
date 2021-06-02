@@ -27,7 +27,7 @@ export default function Home() {
   // Sequences
   const sequence = async () => {
     await headerControl.start(
-      { border: "6rem solid #fff", opacity: 1 },
+      { border: "6rem solid #fff", opacity: 1, zIndex: 1 },
       { duration: 1 }
     );
     await greetingControl.start({ opacity: 1, y: 0, x: 0 }, { duration: 0.5 });
@@ -41,7 +41,7 @@ export default function Home() {
     greetingControl.start({ opacity: 0, x: 200 }, { duration: 0.3 });
     nameControl.start({ opacity: 0, x: 200 }, { duration: 0.3 });
     return await headerControl.start(
-      { border: "0rem solid #fff", opacity: 0 },
+      { border: "0rem solid #fff", opacity: 0, zIndex: -1 },
       { duration: 1 }
     );
   };
@@ -94,6 +94,7 @@ export default function Home() {
       <motion.div
         initial={{
           border: "none",
+          zIndex: 1,
         }}
         animate={headerControl}
         className={styles.header}
