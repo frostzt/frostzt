@@ -31,7 +31,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <motion.header
+      <motion.div
         initial={{
           border: "none",
         }}
@@ -61,7 +61,9 @@ export default function Home() {
         >
           I am Sourav!
         </motion.div>
-      </motion.header>
+      </motion.div>
+      <div className={styles.about}></div>
+      <div className={styles.about}></div>
     </main>
   );
 }

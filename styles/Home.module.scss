@@ -1,4 +1,10 @@
 .header {
+  // Make the page permanantly on top
+  top: 0;
+  left: 0;
+  position: fixed;
+
+  // General Layout
   width: 100vw;
   height: 100vh;
   border: 6rem solid white;
@@ -40,4 +46,10 @@
     letter-spacing: 1.27em;
     color: var(--text-color);
   }
+}
+
+.about {
+  width: 100vw;
+  height: 100vh;
+  background-color: orangered;
 }
