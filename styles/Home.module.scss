@@ -6,10 +6,16 @@
 }
 
 .header {
+  &__replace {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+  }
+
   // Make the page permanantly on top
   top: 0;
   left: 0;
-  position: fixed;
+  position: sticky;
 
   // General Layout
   width: 100vw;

@@ -1,20 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
-import ScrollSnap from "scroll-snap";
 import { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 // Styles
+import ScrollSnap from "scroll-snap";
 import { motion, useAnimation } from "framer-motion";
 import styles from "../styles/Home.module.scss";
 
 type HTMLNull = HTMLDivElement | null;
 
 export default function Home() {
+  // Refs
   const mainContainer = useRef<HTMLNull>(null);
 
-  const cb = () => {
-    console.log("snapped");
-  };
+  // Intersection Observer
+  const [aboutRef, aboutInView] = useInView({ threshold: 0.1 });
 
   // Animation Controls
   const headerControl = useAnimation();
@@ -34,17 +35,21 @@ export default function Home() {
     const element: HTMLNull = mainContainer.current;
     if (element) {
       snapElement = new ScrollSnap(element, {
-        snapDestinationY: "90%",
+        snapDestinationY: "110%",
+        threshold: 0.2,
+        snapStop: false,
       });
     }
 
-    snapElement?.bind(cb);
+    snapElement?.bind();
   };
 
   useEffect(() => {
     sequence();
     bindScrollSnap();
-  });
+  }, []);
+
+  console.log(aboutInView);
 
   return (
     <div ref={mainContainer} className={styles.container}>
@@ -87,8 +92,7 @@ export default function Home() {
           I am Sourav!
         </motion.div>
       </motion.div>
-      <div className={styles.about}></div>
-      <div className={styles.about}></div>
+      <div className={styles.about} ref={aboutRef}></div>
     </div>
   );
 }
