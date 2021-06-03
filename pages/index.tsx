@@ -1,12 +1,13 @@
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 // Styles
 import ScrollSnap from "scroll-snap";
-import { motion, useAnimation } from "framer-motion";
 import styles from "../styles/Home.module.scss";
+import { motion, useAnimation } from "framer-motion";
 
 type HTMLNull = HTMLDivElement | null;
 
@@ -99,7 +100,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <motion.div
+      <motion.div
         initial={{
           border: "none",
           zIndex: 1,
@@ -130,7 +131,7 @@ export default function Home() {
         >
           I am Sourav!
         </motion.div>
-      </motion.div> */}
+      </motion.div>
       <div className={styles.about} ref={aboutRef}>
         <div className={styles.about__container}>
           <motion.div
@@ -173,7 +174,9 @@ export default function Home() {
         </div>
       </div>
       <motion.div ref={projectRef} className={styles.projects}>
-        <motion.h2 className={styles.projectTitle}>projects</motion.h2>
+        <Link href="/projects">
+          <motion.h2 className={styles.projectTitle}>projects</motion.h2>
+        </Link>
       </motion.div>
     </div>
   );

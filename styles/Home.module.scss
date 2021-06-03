@@ -68,14 +68,30 @@
   &__container {
     .abilities {
       cursor: pointer;
+      position: relative;
       display: inline-block;
       transition: transform 0.3s;
       color: var(--primary-color);
-      text-decoration-style: solid;
-      text-decoration-line: line-through;
+
+      &::before {
+        left: 0;
+        top: 50%;
+        content: "";
+        z-index: -1;
+        width: 10%;
+        height: 40%;
+        position: absolute;
+        transition: all 0.3s;
+        display: inline-block;
+        background-color: var(--text-color);
+      }
 
       &:hover {
         transform: translateY(-1rem);
+      }
+
+      &:hover::before {
+        width: 100%;
       }
     }
 
@@ -89,16 +105,36 @@
 
 // Projects
 .projects {
-  width: 100vw;
-  height: 100vh;
+  width: 100vw !important;
+  height: 100vh !important;
   position: relative;
 
   .projectTitle {
     top: 50%;
     left: 50%;
-    font-size: 20rem;
+    z-index: 100;
+    cursor: pointer;
+    font-size: 25rem;
     position: absolute;
     color: var(--text-color);
+    transition: transfrom 0.3s;
     transform: translate(-50%, -50%);
+
+    &::before {
+      left: 0;
+      top: 50%;
+      content: "";
+      z-index: -1;
+      width: 10%;
+      height: 40%;
+      position: absolute;
+      transition: all 0.3s;
+      display: inline-block;
+      background-color: var(--primary-color);
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
   }
 }
