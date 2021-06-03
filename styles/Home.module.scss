@@ -64,6 +64,19 @@
   justify-content: center;
 
   &__container {
+    .abilities {
+      cursor: pointer;
+      display: inline-block;
+      transition: transform 0.3s;
+      color: var(--primary-color);
+      text-decoration-style: solid;
+      text-decoration-line: line-through;
+
+      &:hover {
+        transform: translateY(-1rem);
+      }
+    }
+
     .paragraph {
       font-size: 15rem;
       font-weight: 900;

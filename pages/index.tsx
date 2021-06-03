@@ -130,14 +130,14 @@ export default function Home() {
             className={styles.paragraph}
             animate={paragraphControl}
           >
-            DEVELOPER AND
+            <div className={styles.abilities}>DEVELOPER</div> AND
           </motion.p>
           <motion.p
             initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
             animate={paragraphControl}
           >
-            DESIGNER WHO LIKES
+            <div className={styles.abilities}>DESIGNER</div> WHO LIKES
           </motion.p>
           <motion.p
             initial={{ opacity: 0, x: -200 }}
@@ -167,3 +167,5 @@ export default function Home() {
     </div>
   );
 }
+
+// <div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/D0EjguuQzYr9m" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/computer-nerd-geek-D0EjguuQzYr9m">via GIPHY</a></p>
