@@ -6,6 +6,7 @@
   position: absolute;
 }
 
+// Main Header
 .header {
   // Make the page permanantly on top
   top: 0;
@@ -56,6 +57,7 @@
   }
 }
 
+// About part of the page
 .about {
   width: 100vw;
   height: 100vh;
@@ -83,4 +85,10 @@
       color: var(--text-color);
     }
   }
+}
+
+// Projects
+.projects {
+  width: 100vw;
+  height: 100vh;
 }
