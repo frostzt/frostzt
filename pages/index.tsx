@@ -99,7 +99,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <motion.div
+      {/* <motion.div
         initial={{
           border: "none",
           zIndex: 1,
@@ -130,7 +130,7 @@ export default function Home() {
         >
           I am Sourav!
         </motion.div>
-      </motion.div>
+      </motion.div> */}
       <div className={styles.about} ref={aboutRef}>
         <div className={styles.about__container}>
           <motion.div
@@ -172,7 +172,9 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-      <div ref={projectRef} className={styles.projects}></div>
+      <motion.div ref={projectRef} className={styles.projects}>
+        <motion.h2 className={styles.projectTitle}>projects</motion.h2>
+      </motion.div>
     </div>
   );
 }
