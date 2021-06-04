@@ -8,7 +8,11 @@ import styles from "./Projects.module.scss";
 import Project from "../Project/Project";
 
 const Projects: React.FC = () => {
-  return <div className={styles.container}></div>;
+  return (
+    <div className={styles.container}>
+      <Project />
+    </div>
+  );
 };
 
 export default Projects;

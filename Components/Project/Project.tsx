@@ -8,9 +8,22 @@ import styles from "./Project.module.scss";
 const Project = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.imageContainer}></div>
-      <h2 className={styles.title}></h2>
-      <div className={styles.about}></div>
+      <div className={styles.imageContainer}>
+        <Image
+          className={styles.imageContainer__image}
+          layout="fill"
+          objectFit="cover"
+          src="/images/projects/natours/natours-normal.png"
+        />
+      </div>
+      <div className={styles.content}>
+        <h2 className={styles.title}>Natours</h2>
+        <div className={styles.about}>
+          A travel booking website made using Nodejs, MongoDB, and Express.js.
+          <br />
+          This was my very first project through which I ever learned!
+        </div>
+      </div>
     </div>
   );
 };

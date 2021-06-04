@@ -1,2 +1,15 @@
 .container {
+  display: flex;
+  font-size: 1.6rem;
+  color: var(--text-color);
+
+  .imageContainer {
+    width: 50rem;
+    height: 15rem;
+    position: relative;
+
+    &__image {
+      width: 100% !important;
+    }
+  }
 }
