@@ -7,26 +7,25 @@ import styles from "./Project.module.scss";
 
 interface Props {
   ltr?: Boolean;
+  title: string;
+  about: string;
+  imgurl: string;
 }
 
-const Project: React.FC<Props> = ({ ltr }) => {
+const Project: React.FC<Props> = ({ ltr, title, about, imgurl }) => {
   if (ltr) {
     return (
       <div className={styles.container}>
         <div className={styles.content} style={{ marginRight: "5rem" }}>
-          <h2 className={styles.title}>Natours</h2>
-          <div className={styles.about}>
-            A travel booking website made using Nodejs, MongoDB, and Express.js.
-            <br />
-            This was my very first project through which I ever learned!
-          </div>
+          <h2 className={styles.title}>{title}</h2>
+          <div className={styles.about}>{about}</div>
         </div>
         <div className={styles.imageContainer}>
           <Image
             className={styles.imageContainer__image}
             layout="fill"
             objectFit="cover"
-            src="/images/projects/natours/natours-normal.png"
+            src={imgurl}
           />
         </div>
       </div>
@@ -40,16 +39,12 @@ const Project: React.FC<Props> = ({ ltr }) => {
           className={styles.imageContainer__image}
           layout="fill"
           objectFit="cover"
-          src="/images/projects/natours/natours-normal.png"
+          src={imgurl}
         />
       </div>
       <div className={styles.content} style={{ marginLeft: "5rem" }}>
-        <h2 className={styles.title}>Natours</h2>
-        <div className={styles.about}>
-          A travel booking website made using Nodejs, MongoDB, and Express.js.
-          <br />
-          This was my very first project through which I ever learned!
-        </div>
+        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.about}>{about}</div>
       </div>
     </div>
   );
