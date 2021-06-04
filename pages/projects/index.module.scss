@@ -1,0 +1,37 @@
+.container {
+  width: 100vw;
+  display: flex;
+  position: relative;
+
+  .fixed {
+    width: 15%;
+    height: 100%;
+  }
+
+  .projectsContainer {
+    width: 85%;
+    height: 100%;
+  }
+
+  .projectTitle {
+    z-index: 100;
+    cursor: pointer;
+    position: fixed;
+    font-size: 25rem;
+    transition: all 0.3s;
+    color: var(--text-color);
+
+    &::before {
+      left: 0;
+      top: 50%;
+      content: "";
+      z-index: -1;
+      width: 100%;
+      height: 40%;
+      position: absolute;
+      transition: all 0.3s;
+      display: inline-block;
+      background-color: var(--primary-color);
+    }
+  }
+}
