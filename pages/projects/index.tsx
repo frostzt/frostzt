@@ -4,7 +4,10 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 import styles from "./index.module.scss";
 
-const Projects = () => {
+// Components
+import Projects from "../../Components/Projects/Projects";
+
+const ProjectsPage = () => {
   return (
     <motion.div className={styles.container}>
       <Head>
@@ -29,10 +32,12 @@ const Projects = () => {
       >
         projects
       </motion.h2>
-      <motion.div className={styles.fixed}></motion.div>
-      <motion.div className={styles.projectsContainer}></motion.div>
+      <motion.div className={styles.fixed}>&nbsp;</motion.div>
+      <motion.div className={styles.projectsContainer}>
+        <Projects />
+      </motion.div>
     </motion.div>
   );
 };
 
-export default Projects;
+export default ProjectsPage;
