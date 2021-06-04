@@ -1,6 +1,8 @@
 .container {
   display: flex;
+  cursor: pointer;
   font-size: 1.6rem;
+  margin-bottom: 12rem;
   color: var(--text-color);
 
   .imageContainer {
@@ -10,6 +12,19 @@
 
     &__image {
       width: 100% !important;
+    }
+  }
+
+  .content {
+    .title {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
+
+    .about {
+      font-weight: 300;
+      font-size: 1.7rem;
     }
   }
 }
