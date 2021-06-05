@@ -24,8 +24,9 @@ export default function Home() {
   const headerControl = useAnimation();
   const greetingControl = useAnimation();
   const nameControl = useAnimation();
-  const paragraphControl = useAnimation();
+  const aboutControl = useAnimation();
   const projectControl = useAnimation();
+  const contactControl = useAnimation();
 
   // Sequences
   const sequence = async () => {
@@ -50,14 +51,15 @@ export default function Home() {
   };
 
   const aboutSequence = async () => {
-    return paragraphControl.start(
-      { opacity: 1, x: 0 },
-      { duration: 1, delay: 0.4 }
-    );
+    return aboutControl.start("visible");
   };
 
   const projectSequence = () => {
     return projectControl.start({ opacity: 1 }, { duration: 0.5 });
+  };
+
+  const contactSequence = () => {
+    return contactControl.start("visible");
   };
 
   // Scroll snapping
@@ -73,6 +75,65 @@ export default function Home() {
     }
 
     snapElement?.bind();
+  };
+
+  // Varients
+  const contentVarient = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const contentParagraphsVarients = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        duration: 0.8,
+      },
+    },
+  };
+
+  const aboutVarient = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const aboutParagraphVarient = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        duration: 0.8,
+      },
+    },
   };
 
   // Reset body element
@@ -96,7 +157,11 @@ export default function Home() {
     if (projectInView) {
       projectSequence();
     }
-  }, [aboutInView, projectInView]);
+
+    if (contactInView) {
+      contactSequence();
+    }
+  }, [aboutInView, projectInView, contactInView]);
 
   // Replay the sequence if revisted header
   useEffect(() => {
@@ -117,7 +182,9 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <motion.div
+
+      {/* ----------------------------------------------HEADER---------------------------------------------- */}
+      <motion.header
         initial={{
           border: "none",
           zIndex: 1,
@@ -148,48 +215,52 @@ export default function Home() {
         >
           I am Sourav!
         </motion.div>
-      </motion.div>
-      <div className={styles.about} ref={aboutRef}>
-        <div className={styles.about__container}>
+      </motion.header>
+
+      {/* ----------------------------------------------ABOUT---------------------------------------------- */}
+      <motion.div className={styles.about} ref={aboutRef}>
+        <motion.div
+          variants={aboutVarient}
+          initial="hidden"
+          animate={aboutControl}
+          className={styles.about__container}
+        >
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
-            animate={paragraphControl}
+            variants={aboutParagraphVarient}
           >
             <div className={styles.abilities}>DEVELOPER</div> AND
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
-            animate={paragraphControl}
+            variants={aboutParagraphVarient}
           >
             <div className={styles.abilities}>DESIGNER</div> WHO LIKES
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
-            animate={paragraphControl}
+            variants={aboutParagraphVarient}
           >
             TO LEARN NEW THINGS
             <span style={{ color: "var(--primary-color)" }}>.</span>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
-            animate={paragraphControl}
+            variants={aboutParagraphVarient}
           >
             AND CREATE RANDOM
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
             className={styles.paragraph}
-            animate={paragraphControl}
+            variants={aboutParagraphVarient}
           >
             STUFF FOR FUN
             <span style={{ color: "var(--primary-color)" }}>!</span>
           </motion.div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+
+      {/* ----------------------------------------------PROJECTS---------------------------------------------- */}
       <motion.div ref={projectRef} className={styles.projects}>
         <Link href="/projects">
           <motion.h2
@@ -201,7 +272,56 @@ export default function Home() {
           </motion.h2>
         </Link>
       </motion.div>
-      <motion.div ref={contactRef} className={styles.contact}></motion.div>
+
+      {/* ----------------------------------------------CONTACT---------------------------------------------- */}
+      <motion.div ref={contactRef} className={styles.contact}>
+        <motion.div
+          variants={contentVarient}
+          initial="hidden"
+          animate={contactControl}
+          className={styles.content}
+        >
+          <motion.div
+            variants={contentParagraphsVarients}
+            className={styles.content__para}
+          >
+            open to work
+          </motion.div>
+          <motion.div
+            variants={contentParagraphsVarients}
+            className={styles.content__para}
+          >
+            feel free to
+          </motion.div>
+          <motion.div
+            variants={contentParagraphsVarients}
+            className={styles.content__para}
+          >
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.content__para_link}
+              href=" mailto:aidenfrostbite@gmail.com?subject=Important!"
+            >
+              contact me!
+            </a>
+          </motion.div>
+        </motion.div>
+        <motion.div className={styles.contact__links}>
+          <a
+            className={styles.contact__links_link}
+            href="https://github.com/frostzt"
+          >
+            github
+          </a>
+          <a
+            className={styles.contact__links_link}
+            href="https://twitter.com/souravsrawat"
+          >
+            twitter
+          </a>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
