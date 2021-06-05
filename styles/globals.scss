@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  overscroll-behavior-y: none;
   font-family: "Lato", sans-serif;
   background-color: var(--background);
 
