@@ -9,9 +9,6 @@ import ScrollSnap from "scroll-snap";
 import styles from "../styles/Home.module.scss";
 import { motion, useAnimation } from "framer-motion";
 
-// Layout
-import Scroll from "../Layouts/Scroll";
-
 type HTMLNull = HTMLDivElement | null;
 
 export default function Home() {
@@ -21,13 +18,14 @@ export default function Home() {
   // Intersection Observers
   const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
   const [projectRef, projectInView] = useInView({ threshold: 0.5 });
+  const [contactRef, contactInView] = useInView({ threshold: 0.5 });
 
   // Animation Controls
   const headerControl = useAnimation();
   const greetingControl = useAnimation();
   const nameControl = useAnimation();
-
   const paragraphControl = useAnimation();
+  const projectControl = useAnimation();
 
   // Sequences
   const sequence = async () => {
@@ -52,7 +50,14 @@ export default function Home() {
   };
 
   const aboutSequence = async () => {
-    paragraphControl.start({ opacity: 1, x: 0 }, { duration: 1, delay: 0.4 });
+    return paragraphControl.start(
+      { opacity: 1, x: 0 },
+      { duration: 1, delay: 0.4 }
+    );
+  };
+
+  const projectSequence = () => {
+    return projectControl.start({ opacity: 1 }, { duration: 0.5 });
   };
 
   // Scroll snapping
@@ -70,6 +75,11 @@ export default function Home() {
     snapElement?.bind();
   };
 
+  // Reset body element
+  useEffect(() => {
+    document.body.style.height = `0px`;
+  }, []);
+
   // Play animation sequence and bind scroll snapping
   useEffect(() => {
     sequence();
@@ -82,12 +92,16 @@ export default function Home() {
       headerExitSequence();
       aboutSequence();
     }
+
+    if (projectInView) {
+      projectSequence();
+    }
   }, [aboutInView, projectInView]);
 
   // Replay the sequence if revisted header
   useEffect(() => {
     if (mainContainer.current?.scrollTop) {
-      if (mainContainer.current?.scrollTop < 500) {
+      if (mainContainer.current?.scrollTop <= 500) {
         sequence();
       }
     }
@@ -178,9 +192,16 @@ export default function Home() {
       </div>
       <motion.div ref={projectRef} className={styles.projects}>
         <Link href="/projects">
-          <motion.h2 className={styles.projectTitle}>projects</motion.h2>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={projectControl}
+            className={styles.projectTitle}
+          >
+            projects
+          </motion.h2>
         </Link>
       </motion.div>
+      <motion.div ref={contactRef} className={styles.contact}></motion.div>
     </div>
   );
 }

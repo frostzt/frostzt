@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import styles from "./Skills.module.scss";
 
 const Skills = () => {
-  return <div></div>;
+  return <div className={styles.container}></div>;
 };
 
 export default Skills;

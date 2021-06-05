@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import styles from "./index.module.scss";
 
 // Components
+import Skills from "../../Components/Skills/Skills";
 import Projects from "../../Components/Projects/Projects";
 
 // Layout
@@ -18,9 +19,9 @@ const ProjectsPage = () => {
   const projectVariant = {
     normal: {
       fontSize: "25rem",
-      top: "50%",
+      top: "25%",
       left: "50%",
-      transform: "translate(-50%, -50%)",
+      transform: "translate(-50%, -25%)",
     },
     animated: {
       left: "-15%",
@@ -74,7 +75,7 @@ const ProjectsPage = () => {
 
         {/* Main Content */}
         <motion.div className={styles.projectsContainer}>
-          {currentSelect === "projects" ? <Projects /> : null}
+          {currentSelect === "projects" ? <Projects /> : <Skills />}
         </motion.div>
 
         {/* Side Skill Heading */}
