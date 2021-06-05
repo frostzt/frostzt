@@ -54,8 +54,9 @@ const Projects: React.FC = () => {
       >
         <Project
           title="Natours"
-          about="A travel booking website made using Nodejs, MongoDB, and Express.js. This was my very first project through which I ever learned!"
+          to="https://natours-sourav.herokuapp.com"
           imgurl="/images/projects/natours/natours-normal.png"
+          about="A travel booking website made using Nodejs, MongoDB, and Express.js. This was my very first project through which I ever learned!"
         />
       </motion.div>
       <motion.div
@@ -64,8 +65,9 @@ const Projects: React.FC = () => {
       >
         <Project
           title="Emage"
-          about="A web app to upload and host images for free. Provides a direct route to imgur API so there is no need of authentication."
+          to="https://emageical.herokuapp.com"
           imgurl="/images/projects/emage/emage-normal.png"
+          about="A web app to upload and host images for free. Provides a direct route to imgur API so there is no need of authentication."
           ltr
         />
       </motion.div>
@@ -75,6 +77,7 @@ const Projects: React.FC = () => {
       >
         <Project
           title="Emageically"
+          to="https://emageically.herokuapp.com/"
           about="Website just like Unsplash where you can upload free-to-use images and can download them for free. The website also allows users to anonymously upload images."
           imgurl="/images/projects/emageically/emageically-normal.png"
         />
@@ -85,6 +88,7 @@ const Projects: React.FC = () => {
       >
         <Project
           title="Reactive Clothing"
+          to="https://reactive-clothing-live.herokuapp.com/"
           about="An e-commerce site built using React and Redux. Light and fast as it can be!"
           imgurl="/images/projects/emageically/emageically-normal.png"
           ltr
@@ -96,6 +100,7 @@ const Projects: React.FC = () => {
       >
         <Project
           title="Trillo"
+          to="https://frostzt.github.io/Trilloproject/"
           about="A static website that I built to learn SASS and advanced CSS/SASS!"
           imgurl="/images/projects/trillo/trillo-normal.png"
         />
@@ -106,6 +111,7 @@ const Projects: React.FC = () => {
       >
         <Project
           title="Snake Game"
+          to="https://frostzt.github.io/snake-game/"
           about="You can guess what this one does, eh? I mean who haven't played this! Its GOLD!"
           imgurl="/images/projects/snake/snake-normal.png"
           ltr

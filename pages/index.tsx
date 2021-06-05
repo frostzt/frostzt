@@ -9,6 +9,9 @@ import ScrollSnap from "scroll-snap";
 import styles from "../styles/Home.module.scss";
 import { motion, useAnimation } from "framer-motion";
 
+// Layout
+import Scroll from "../Layouts/Scroll";
+
 type HTMLNull = HTMLDivElement | null;
 
 export default function Home() {

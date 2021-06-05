@@ -74,7 +74,7 @@ const ProjectsPage = () => {
 
         {/* Main Content */}
         <motion.div className={styles.projectsContainer}>
-          <Projects />
+          {currentSelect === "projects" ? <Projects /> : null}
         </motion.div>
 
         {/* Side Skill Heading */}
