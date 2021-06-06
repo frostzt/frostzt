@@ -1,3 +1,49 @@
 .container {
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  & > * {
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  .heading {
+    font-size: 7rem;
+    font-weight: 900;
+    position: relative;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+  }
+
+  .icons {
+    display: flex;
+    font-size: 6rem;
+    justify-content: center;
+    color: var(--text-color);
+
+    & > * {
+      margin-right: 1rem;
+      transition: all 0.3s;
+    }
+
+    & > *:hover {
+      transform: scale(1.1);
+      color: var(--primary-color);
+    }
+  }
+}
+
+.pack {
+  & > * {
+    margin-right: 1rem;
+    transition: all 0.3s;
+  }
+
+  & > *:hover {
+    transform: scale(1.1);
+    color: var(--primary-color);
+  }
 }
