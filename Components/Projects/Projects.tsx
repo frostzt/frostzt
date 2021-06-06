@@ -76,7 +76,7 @@ const Projects: React.FC = () => {
       >
         <Project
           title="Emageically"
-          to="https://emageically.herokuapp.com/"
+          to="https://emageically.netlify.app/"
           about="Website just like Unsplash where you can upload free-to-use images and can download them for free. The website also allows users to anonymously upload images."
           imgurl="/images/projects/emageically/emageically-normal.png"
         />
