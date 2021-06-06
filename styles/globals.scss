@@ -1,3 +1,5 @@
+@import "./responsiveManager.scss";
+
 *,
 *::after,
 *::before {
@@ -8,6 +10,18 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(laptopLarge) {
+    font-size: 50%;
+  }
+
+  @include respond(laptop) {
+    font-size: 40%;
+  }
+
+  @include respond(mobileLarge) {
+    font-size: 35%;
+  }
 }
 
 body {

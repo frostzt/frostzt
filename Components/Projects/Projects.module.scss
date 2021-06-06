@@ -1,3 +1,5 @@
+@import "../../styles/responsiveManager.scss";
+
 .container {
   width: 100%;
   padding: 10rem;
@@ -5,4 +7,8 @@
   padding-top: 8rem;
   align-items: center;
   flex-direction: column;
+
+  @include respond(mobileLarge) {
+    padding: 2rem;
+  }
 }

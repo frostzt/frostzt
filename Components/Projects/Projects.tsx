@@ -17,7 +17,6 @@ const Projects: React.FC = () => {
       x: 0,
       opacity: 1,
       transition: {
-        delay: 1,
         type: "spring",
         duration: 0.8,
         staggerChildren: 0.2,

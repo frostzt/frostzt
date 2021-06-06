@@ -1,3 +1,5 @@
+@import "../../styles/responsiveManager.scss";
+
 .link {
   text-decoration: none;
 
@@ -8,6 +10,10 @@
     position: relative;
     margin-bottom: 12rem;
     color: var(--text-color);
+
+    @include respond(mobileLarge) {
+      flex-direction: column;
+    }
 
     &:hover .readmore {
       opacity: 1;
@@ -37,12 +43,20 @@
       height: 15rem;
       position: relative;
 
+      @include respond(mobileLarge) {
+        margin: 0 auto;
+      }
+
       &__image {
         width: 100% !important;
       }
     }
 
     .content {
+      @include respond(mobileLarge) {
+        text-align: center;
+      }
+
       .title {
         font-size: 4rem;
         font-weight: 900;
@@ -52,6 +66,10 @@
       .about {
         font-weight: 300;
         font-size: 1.7rem;
+
+        @include respond(mobileLarge) {
+          margin-bottom: 3rem;
+        }
       }
     }
   }

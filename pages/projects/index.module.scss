@@ -1,21 +1,60 @@
+@import "../../styles/responsiveManager.scss";
+
 .container {
   width: 100%;
   display: flex;
   position: relative;
 
+  @include respond(mobileLarge) {
+    padding: 2rem;
+  }
+
   .projectFixed {
     width: 15%;
     height: 100%;
+
+    @include respond(mobileLarge) {
+      width: 0;
+    }
   }
 
   .skillFixed {
     width: 15%;
     height: 100%;
+
+    @include respond(mobileLarge) {
+      width: 0;
+    }
   }
 
   .projectsContainer {
     width: 70%;
     height: 100%;
+
+    @include respond(mobileLarge) {
+      width: 100%;
+    }
+
+    .backlink {
+      cursor: pointer;
+      font-size: 2.4rem;
+      margin-bottom: 5rem;
+      color: var(--primary-color);
+
+      @include respond(mobileLarge) {
+        margin-left: 5rem;
+      }
+    }
+
+    .navigationControls {
+      display: flex;
+      margin-bottom: 3rem;
+      justify-content: space-evenly;
+
+      &__link {
+        font-size: 3rem;
+      }
+    }
   }
 
   .projectTitle {

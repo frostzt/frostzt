@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 import { useInView } from "react-intersection-observer";
 
 // Styles
@@ -13,12 +14,13 @@ type HTMLNull = HTMLDivElement | null;
 
 export default function Home() {
   // Refs
-  const mainContainer = useRef<HTMLNull>(null);
+  const mainContainer = useRef<any>(null);
 
   // Intersection Observers
   const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
   const [projectRef, projectInView] = useInView({ threshold: 0.5 });
   const [contactRef, contactInView] = useInView({ threshold: 0.5 });
+  const [headerCheckRef, headerCheckInView] = useInView({ threshold: 0.01 });
 
   // Animation Controls
   const headerControl = useAnimation();
@@ -28,10 +30,19 @@ export default function Home() {
   const projectControl = useAnimation();
   const contactControl = useAnimation();
 
+  // Responsive checks
+  const isTabletPortrait = useMediaQuery({ maxWidth: 768 });
+  const isMobileLarge = useMediaQuery({ maxWidth: 425 });
+  const isMobileSmall = useMediaQuery({ maxWidth: 320 });
+
   // Sequences
   const sequence = async () => {
     await headerControl.start(
-      { border: "6rem solid #fff", opacity: 1, zIndex: 1 },
+      {
+        border: isTabletPortrait ? "4rem solid #fff" : "6rem solid #fff",
+        opacity: 1,
+        zIndex: 1,
+      },
       { duration: 1 }
     );
     await greetingControl.start({ opacity: 1, y: 0, x: 0 }, { duration: 0.5 });
@@ -165,15 +176,11 @@ export default function Home() {
 
   // Replay the sequence if revisted header
   useEffect(() => {
-    if (mainContainer.current?.scrollTop) {
-      if (mainContainer.current?.scrollTop <= 500) {
-        sequence();
-      }
-    }
-  }, [mainContainer.current?.scrollTop]);
+    sequence();
+  }, [headerCheckInView]);
 
   return (
-    <div ref={mainContainer} className={styles.container}>
+    <div ref={mainContainer} id="main-container" className={styles.container}>
       <Head>
         <title>Sourav Rawat | Web Developer and Designer</title>
         <meta
@@ -184,6 +191,7 @@ export default function Home() {
       </Head>
 
       {/* ----------------------------------------------HEADER---------------------------------------------- */}
+      <div ref={headerCheckRef} className={styles.headcheck} />
       <motion.header
         initial={{
           border: "none",
@@ -213,7 +221,15 @@ export default function Home() {
           animate={nameControl}
           className={styles.name}
         >
-          I am Sourav!
+          {isMobileLarge ? (
+            <>
+              I am
+              <br />
+              Sourav!
+            </>
+          ) : (
+            "I am Sourav!"
+          )}
         </motion.div>
       </motion.header>
 
@@ -235,27 +251,57 @@ export default function Home() {
             className={styles.paragraph}
             variants={aboutParagraphVarient}
           >
-            <div className={styles.abilities}>DESIGNER</div> WHO LIKES
+            {isTabletPortrait ? (
+              <>
+                <div className={styles.abilities}>DESIGNER</div> WHO
+              </>
+            ) : (
+              <>
+                <div className={styles.abilities}>DESIGNER</div> WHO LIKES
+              </>
+            )}
           </motion.div>
           <motion.div
             className={styles.paragraph}
             variants={aboutParagraphVarient}
           >
-            TO LEARN NEW THINGS
-            <span style={{ color: "var(--primary-color)" }}>.</span>
+            {isTabletPortrait ? (
+              <>LIKES TO LEARN</>
+            ) : (
+              <>
+                TO LEARN NEW THINGS
+                <span style={{ color: "var(--primary-color)" }}>.</span>
+              </>
+            )}
           </motion.div>
           <motion.div
             className={styles.paragraph}
             variants={aboutParagraphVarient}
           >
-            AND CREATE RANDOM
+            {isTabletPortrait ? (
+              <>
+                NEW THINGS
+                <span style={{ color: "var(--primary-color)" }}>.</span> AND
+              </>
+            ) : (
+              <>AND CREATE RANDOM</>
+            )}
           </motion.div>
           <motion.div
             className={styles.paragraph}
             variants={aboutParagraphVarient}
           >
-            STUFF FOR FUN
-            <span style={{ color: "var(--primary-color)" }}>!</span>
+            {isTabletPortrait ? (
+              <>
+                CREATE RANDOM STUFF FOR FUN
+                <span style={{ color: "var(--primary-color)" }}>!</span>
+              </>
+            ) : (
+              <>
+                STUFF FOR FUN
+                <span style={{ color: "var(--primary-color)" }}>!</span>
+              </>
+            )}
           </motion.div>
         </motion.div>
       </motion.div>
