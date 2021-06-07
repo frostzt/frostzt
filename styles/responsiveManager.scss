@@ -33,4 +33,11 @@
       @content;
     }
   }
+
+  @if $breakpoint == desktop-1 {
+    @media only screen and (max-width: 85.375em) {
+      // 1366px
+      @content;
+    }
+  }
 }

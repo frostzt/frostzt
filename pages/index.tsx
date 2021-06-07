@@ -24,7 +24,7 @@ export default function Home() {
 
   // Intersection Observers
   const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
-  const [projectRef, projectInView] = useInView({ threshold: 0.01 });
+  const [projectRef, projectInView] = useInView({ threshold: 0.2 });
   const [contactRef, contactInView] = useInView({ threshold: 0.5 });
 
   // Animation Controls
@@ -92,7 +92,7 @@ export default function Home() {
   const contentParagraphsVarients = {
     hidden: {
       opacity: 0,
-      y: 100,
+      y: 50,
     },
     visible: {
       opacity: 1,
@@ -121,7 +121,7 @@ export default function Home() {
   const aboutParagraphVarient = {
     hidden: {
       opacity: 0,
-      y: 100,
+      y: 50,
     },
     visible: {
       opacity: 1,
@@ -292,7 +292,7 @@ export default function Home() {
             >
               projects
             </motion.h2>
-            <Projects />
+            <Projects isVisible={projectInView} />
           </motion.div>
 
           {/* ----------------------------------------------CONTACT---------------------------------------------- */}

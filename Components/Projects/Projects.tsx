@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Styles and animations
-import { motion } from "framer-motion";
 import styles from "./Projects.module.scss";
+import { motion, useAnimation } from "framer-motion";
 
 // Components
 import Project from "../Project/Project";
 
-const Projects: React.FC = () => {
+interface Props {
+  isVisible: Boolean;
+}
+
+const Projects: React.FC<Props> = ({ isVisible }) => {
+  const containerControl = useAnimation();
+
+  useEffect(() => {
+    if (isVisible) {
+      containerControl.start("visible");
+    }
+  }, [isVisible]);
+
   const containerVarients = {
     hidden: {
       x: 500,
@@ -27,7 +39,7 @@ const Projects: React.FC = () => {
 
   const projectContainerVarients = {
     hidden: {
-      y: 100,
+      y: 70,
       opacity: 0,
     },
     visible: {
@@ -45,7 +57,7 @@ const Projects: React.FC = () => {
       className={styles.container}
       variants={containerVarients}
       initial="hidden"
-      animate="visible"
+      animate={containerControl}
     >
       <motion.div
         className={styles.projectContainer}
