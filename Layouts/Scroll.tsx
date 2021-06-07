@@ -12,7 +12,7 @@ const Scroll: React.FC = ({ children }) => {
   const scrollRef = useRef<any>(null);
 
   const skewConfigs = {
-    ease: 0.4,
+    ease: 0.6,
     current: 0,
     previous: 0,
     rounded: 0,
