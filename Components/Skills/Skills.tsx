@@ -16,9 +16,6 @@ const Skills: React.FC = () => {
       <motion.div style={{ marginTop: "5rem" }} className={styles.languages}>
         <motion.h2 className={styles.heading}>Languages</motion.h2>
         <motion.div className={styles.icons}>
-          <i title="C" className="devicon-c-plain" />
-          <i title="C++" className="devicon-cplusplus-plain" />
-          <i title="Python" className="devicon-python-plain" />
           <i title="JavaScript" className="devicon-javascript-plain" />
           <i title="TypeScript" className="devicon-typescript-plain" />
           <i title="HTML5" className="devicon-html5-plain" />
@@ -119,6 +116,9 @@ const Skills: React.FC = () => {
             <i title="Firebase" className="devicon-firebase-plain" />
             <i title="Flutter" className="devicon-flutter-plain" />
             <i title="Go" className="devicon-go-plain" />
+            <i title="C" className="devicon-c-plain" />
+            <i title="C++" className="devicon-cplusplus-plain" />
+            <i title="Python" className="devicon-python-plain" />
           </div>
           <div
             className={styles.pack}
