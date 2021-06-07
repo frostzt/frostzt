@@ -15,6 +15,10 @@
       flex-direction: column;
     }
 
+    @include respond(mobileSmall) {
+      flex-direction: column;
+    }
+
     &:hover .readmore {
       opacity: 1;
     }

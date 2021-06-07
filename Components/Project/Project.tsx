@@ -22,7 +22,7 @@ const Project: React.FC<Props> = ({ ltr, title, about, imgurl, to }) => {
         <div className={styles.container}>
           <div className={styles.content}>
             <h2 className={styles.title}>{title}</h2>
-            <div className={styles.about}>{about}</div>
+            <p className={styles.about}>{about}</p>
           </div>
           <div className={styles.imageContainer}>
             <Image

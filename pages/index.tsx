@@ -8,6 +8,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 // Styles
 import styles from "../styles/Home.module.scss";
 import { motion, useAnimation } from "framer-motion";
+import cx from "classnames";
 
 // Layout
 import Scroll from "../Layouts/Scroll";
@@ -192,7 +193,7 @@ export default function Home() {
                   />
                 </div>
               )}
-              <div className={styles.hi}>HI</div>
+              <p className={cx([styles.hiText])}>HI</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -100 }}

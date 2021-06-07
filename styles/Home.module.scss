@@ -51,20 +51,17 @@
       flex-direction: column;
     }
 
-    @include respond(mobileSmall) {
-    }
-
     .imageContainer {
       width: 60rem;
       height: 60rem;
       position: relative;
 
       &__image {
-        width: 100% !important;
+        width: 100%;
       }
     }
 
-    .hi {
+    .hiText {
       font-size: 54rem;
       font-weight: 900;
       color: var(--text-color);
@@ -157,12 +154,16 @@
       font-weight: 900;
       color: var(--text-color);
 
-      @include respond(laptop) {
-        font-size: 12rem;
+      @include respond(mobileSmall) {
+        font-size: 5rem !important;
       }
 
       @include respond(mobileLarge) {
-        font-size: 5rem;
+        font-size: 5rem !important;
+      }
+
+      @include respond(laptop) {
+        font-size: 12rem;
       }
 
       @include respond(desktop-1) {

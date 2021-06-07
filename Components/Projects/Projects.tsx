@@ -62,6 +62,8 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       <motion.div
         className={styles.projectContainer}
         variants={projectContainerVarients}
+        initial="hidden"
+        animate="visible"
       >
         <Project
           title="Natours"
@@ -73,6 +75,8 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       <motion.div
         className={styles.projectContainer}
         variants={projectContainerVarients}
+        initial="hidden"
+        animate="visible"
       >
         <Project
           title="Emage"
@@ -85,6 +89,8 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       <motion.div
         className={styles.projectContainer}
         variants={projectContainerVarients}
+        initial="hidden"
+        animate="visible"
       >
         <Project
           title="Emageically"
@@ -96,6 +102,8 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       <motion.div
         className={styles.projectContainer}
         variants={projectContainerVarients}
+        initial="hidden"
+        animate="visible"
       >
         <Project
           title="Reactive Clothing"
@@ -108,6 +116,8 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       <motion.div
         className={styles.projectContainer}
         variants={projectContainerVarients}
+        initial="hidden"
+        animate="visible"
       >
         <Project
           title="Trillo"
@@ -119,6 +129,8 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       <motion.div
         className={styles.projectContainer}
         variants={projectContainerVarients}
+        initial="hidden"
+        animate="visible"
       >
         <Project
           title="Snake Game"
