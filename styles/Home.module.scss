@@ -68,7 +68,6 @@
       font-size: 54rem;
       font-weight: 900;
       color: var(--text-color);
-      transform: translateY(4rem);
 
       @include respond(tabletPortrait) {
         font-size: 45rem;
