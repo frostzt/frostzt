@@ -87,7 +87,7 @@ const ProjectsPage = () => {
 
         {/* Main Content */}
         <motion.div className={styles.projectsContainer}>
-          {currentSelect === "projects" ? <Projects /> : <Skills />}
+          {/* {currentSelect === "projects" ? <Projects /> : <Skills />} */}
           {isMobileLarge ? (
             <div className={styles.navigationControls}>
               <div
