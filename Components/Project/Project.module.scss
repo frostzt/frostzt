@@ -40,6 +40,14 @@
         position: absolute;
         background-color: var(--primary-color);
       }
+
+      @include respond(mobileLarge) {
+        opacity: 0 !important;
+      }
+
+      @include respond(mobileSmall) {
+        opacity: 0 !important;
+      }
     }
 
     .imageContainer {
@@ -59,6 +67,12 @@
     .content {
       @include respond(mobileLarge) {
         text-align: center;
+        margin: 0 auto !important;
+      }
+
+      @include respond(mobileSmall) {
+        text-align: center;
+        margin: 0 auto !important;
       }
 
       .title {
