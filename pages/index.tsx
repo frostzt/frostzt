@@ -14,6 +14,7 @@ import cx from "classnames";
 import Scroll from "../Layouts/Scroll";
 
 // Components
+import NavBar from "../Components/NavBar/NavBar";
 import Projects from "../Components/Projects/Projects";
 import PreLoader from "../Components/PreLoader/PreLoader";
 
@@ -157,6 +158,7 @@ export default function Home() {
   return (
     <Fragment>
       {/* <PreLoader currentState={isLoading} changeState={handleLoadingState} /> */}
+      <NavBar />
       <div ref={mainContainer} id="main-container" className={styles.container}>
         <Head>
           <title>Sourav Rawat | Web Developer and Designer</title>
@@ -196,18 +198,25 @@ export default function Home() {
               <p className={cx([styles.hiText])}>HI</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: -100 }}
+              initial={{ opacity: 0, y: -50 }}
               animate={nameControl}
               className={styles.name}
             >
               {isMobileLarge ? (
                 <>
                   I am
-                  <br /> Sourav!
+                  <br /> Sourav
                 </>
               ) : (
-                "I am Sourav!"
+                <>I am Sourav</>
               )}
+            </motion.div>
+            <motion.div
+              animate={nameControl}
+              initial={{ opacity: 0, y: -50 }}
+              className={styles.titleDesc}
+            >
+              A full-stack developer.
             </motion.div>
           </motion.header>
 
@@ -285,7 +294,11 @@ export default function Home() {
           </motion.div>
 
           {/* ----------------------------------------------PROJECTS---------------------------------------------- */}
-          <motion.div ref={projectRef} className={styles.projects}>
+          <motion.div
+            ref={projectRef}
+            id="all-projects"
+            className={styles.projects}
+          >
             <motion.h2
               initial={{ opacity: 0 }}
               animate={projectControl}
@@ -293,6 +306,14 @@ export default function Home() {
             >
               projects
             </motion.h2>
+            <motion.h4
+              initial={{ opacity: 0 }}
+              animate={projectControl}
+              className={styles.projectSub}
+            >
+              projects are deployed using Heroku free dynos, sites might take
+              time to load (this is because it puts free dynos to sleep)
+            </motion.h4>
             <Projects isVisible={projectInView} />
           </motion.div>
 
@@ -324,7 +345,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.content__para_link}
-                  href=" mailto:aidenfrostbite@gmail.com?subject=Important!"
+                  href="mailto:aidenfrostbite@gmail.com?subject=Important!"
                 >
                   contact me!
                 </a>

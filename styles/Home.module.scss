@@ -22,6 +22,7 @@
   // Make the page permanantly on top
   top: 0;
   left: 0;
+  text-align: center;
   position: relative;
 
   // General Layout
@@ -99,6 +100,19 @@
     @include respond(mobileSmall) {
       font-size: 4rem;
       letter-spacing: 1.1em;
+    }
+  }
+
+  .titleDesc {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    color: var(--text-color);
+
+    @include respond(mobileLarge) {
+      font-size: 2.5rem;
+      text-align: center;
+      letter-spacing: 0.3em;
     }
   }
 }
@@ -184,6 +198,12 @@
     padding: 5rem 0;
   }
 
+  .projectSub {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    transform: translateY(-2rem);
+  }
+
   .projectTitle {
     z-index: 100;
     margin: 0 auto;
@@ -217,8 +237,9 @@
   width: 100%;
   height: 100%;
   display: flex;
+  padding-top: 10rem;
   align-items: center;
-  padding: 10rem 0;
+  padding-bottom: 15rem;
   flex-direction: column;
   justify-content: center;
 
@@ -245,6 +266,7 @@
         position: relative;
         text-decoration: none;
         color: var(--primary-color);
+        transform: translateY(-3rem);
 
         &::before {
           left: 0;

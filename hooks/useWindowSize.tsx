@@ -8,7 +8,6 @@ export default function useWindowSize() {
         height: window.innerHeight,
       };
     }
-
     return {
       width: 0,
       height: 0,

@@ -118,7 +118,6 @@ const Skills: React.FC = () => {
             <i title="Go" className="devicon-go-plain" />
             <i title="C" className="devicon-c-plain" />
             <i title="C++" className="devicon-cplusplus-plain" />
-            <i title="Python" className="devicon-python-plain" />
           </div>
           <div
             className={styles.pack}
@@ -131,6 +130,7 @@ const Skills: React.FC = () => {
             <i title="Redis" className="devicon-redis-plain" />
             <i title="Ruby" className="devicon-ruby-plain" />
             <i title="Rust" className="devicon-rust-plain" />
+            <i title="Python" className="devicon-python-plain" />
             <i title="Vuejs" className="devicon-vuejs-plain" />
           </div>
         </motion.div>
