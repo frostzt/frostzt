@@ -19,6 +19,13 @@ const NavBar: React.FC = () => {
       >
         <div className={styles.links}>contact me</div>
       </a>
+      <a
+        target="_blank"
+        style={{ textDecoration: "none" }}
+        href="https://drive.google.com/file/d/1FAoBmLjnoeEryZuMoeun2ElRGHownOei/view?usp=sharing"
+      >
+        <div className={styles.links}>resume</div>
+      </a>
     </div>
   );
 };
