@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
 
 // Styles and animations
 import styles from "./Projects.module.scss";
@@ -14,8 +13,6 @@ interface Props {
 
 const Projects: React.FC<Props> = ({ isVisible }) => {
   const containerControl = useAnimation();
-
-  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
 
   useEffect(() => {
     if (isVisible) {
@@ -70,7 +67,6 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       >
         <Project
           title="Althemic"
-          isMobile={isMobile}
           to="/projects/althemic"
           imgurl="/images/projects/natours/natours-normal.png"
           about="A travel booking website made using Nodejs, MongoDB, and Express.js. This was my very first project through which I ever learned!"
@@ -85,7 +81,6 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       >
         <Project
           title="Natours"
-          isMobile={isMobile}
           to="https://natours-sourav.herokuapp.com"
           imgurl="/images/projects/natours/natours-normal.png"
           about="A travel booking website made using Nodejs, MongoDB, and Express.js. This was my very first project through which I ever learned!"
@@ -99,7 +94,6 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       >
         <Project
           title="Emage"
-          isMobile={isMobile}
           to="https://emageical.herokuapp.com"
           imgurl="/images/projects/emage/emage-normal.png"
           about="A web app to upload and host images for free. Provides a direct route to imgur API so there is no need of authentication."
@@ -113,7 +107,6 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
         animate="visible"
       >
         <Project
-          isMobile={isMobile}
           title="Emageically"
           to="https://emageically.netlify.app/"
           about="Website just like Unsplash where you can upload free-to-use images and can download them for free. The website also allows users to anonymously upload images."
@@ -127,7 +120,6 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
         animate="visible"
       >
         <Project
-          isMobile={isMobile}
           title="Reactive Clothing"
           to="https://reactive-clothing-live.herokuapp.com/"
           about="An e-commerce site built using React and Redux. Light and fast as it can be!"
@@ -142,7 +134,6 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
         animate="visible"
       >
         <Project
-          isMobile={isMobile}
           title="Trillo"
           to="https://frostzt.github.io/Trilloproject/"
           about="A static website that I built to learn SASS and advanced CSS/SASS!"
@@ -156,7 +147,6 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
         animate="visible"
       >
         <Project
-          isMobile={isMobile}
           title="Snake Game"
           to="https://frostzt.github.io/snake-game/"
           about="You can guess what this one does, eh? I mean who haven't played this! Its GOLD!"
