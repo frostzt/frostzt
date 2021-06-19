@@ -69,6 +69,21 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
         animate="visible"
       >
         <Project
+          title="Althemic"
+          isMobile={isMobile}
+          to="/projects/althemic"
+          imgurl="/images/projects/natours/natours-normal.png"
+          about="A travel booking website made using Nodejs, MongoDB, and Express.js. This was my very first project through which I ever learned!"
+          ltr
+        />
+      </motion.div>
+      <motion.div
+        className={styles.projectContainer}
+        variants={projectContainerVarients}
+        initial="hidden"
+        animate="visible"
+      >
+        <Project
           title="Natours"
           isMobile={isMobile}
           to="https://natours-sourav.herokuapp.com"

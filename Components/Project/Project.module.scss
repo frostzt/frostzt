@@ -10,6 +10,7 @@
     position: relative;
     margin-bottom: 12rem;
     color: var(--text-color);
+    justify-content: space-between;
 
     @include respond(mobileLarge) {
       flex-direction: column;
@@ -65,6 +66,8 @@
     }
 
     .content {
+      width: 50%;
+
       @include respond(mobileLarge) {
         text-align: center;
         margin: 0 auto !important;
