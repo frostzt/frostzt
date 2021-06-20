@@ -10,62 +10,42 @@ interface Props {
   about: string;
   imgurl: string;
   to: string;
-  isMobile: Boolean;
 }
 
 const Project: React.FC<Props> = ({
-  ltr,
+  ltr = false,
   title,
   about,
   imgurl,
   to,
-  isMobile,
 }) => {
-  if (ltr) {
-    return (
-      <a href={to} className={styles.link} target="_blank">
-        <div className={styles.container}>
-          <div
-            className={styles.readmore}
-            style={{ top: "50%", left: "5%", transform: "translateY(-50%)" }}
-          >
-            Check it out!
-          </div>
-          <div className={styles.content} style={{ marginRight: "5rem" }}>
-            <h2 className={styles.title}>{title}</h2>
-            <div className={styles.about}>{about}</div>
-          </div>
-          <div className={styles.imageContainer}>
-            <Image
-              className={styles.imageContainer__image}
-              layout="fill"
-              objectFit="cover"
-              src={imgurl}
-            />
-          </div>
-        </div>
-      </a>
-    );
-  }
-
   return (
     <a href={to} className={styles.link} target="_blank">
       <div className={styles.container}>
         <div
           className={styles.readmore}
-          style={{ top: "50%", right: "5%", transform: "translateY(-50%)" }}
+          style={{
+            top: "50%",
+            right: ltr ? "auto" : "5%",
+            left: ltr ? "5%" : "auto",
+            transform: "translateY(-50%)",
+          }}
         >
           Check it out!
         </div>
-        <div className={styles.imageContainer}>
+        <div className={styles.imageContainer} style={{ order: ltr ? 3 : 2 }}>
           <Image
             className={styles.imageContainer__image}
             layout="fill"
             objectFit="cover"
             src={imgurl}
+            alt={title}
           />
         </div>
-        <div className={styles.content} style={{ marginLeft: "5rem" }}>
+        <div
+          className={styles.content}
+          style={{ marginLeft: "5rem", order: ltr ? 2 : 3 }}
+        >
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.about}>{about}</div>
         </div>

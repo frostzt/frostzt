@@ -44,6 +44,7 @@
 
       @include respond(mobileLarge) {
         opacity: 0 !important;
+        display: none !important;
       }
 
       @include respond(mobileSmall) {
@@ -58,6 +59,7 @@
 
       @include respond(mobileLarge) {
         margin: 0 auto;
+        order: 0 !important;
       }
 
       &__image {
@@ -71,6 +73,7 @@
       @include respond(mobileLarge) {
         text-align: center;
         margin: 0 auto !important;
+        order: 0 !important;
       }
 
       @include respond(mobileSmall) {
