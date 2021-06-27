@@ -67,16 +67,9 @@ const Projects: React.FC<Props> = ({ isVisible }) => {
       >
         <Project
           title="Althemic"
-<<<<<<< HEAD
-          isMobile={isMobile}
           to="https://althemic-alpha.herokuapp.com/"
           imgurl="/images/projects/althemic/althemic-normal.png"
           about="A webapp for meeting new people and also keeping a personal space. Also uses a Chat Server for live chatting. It is a side project that I made and worked on it as a Startup!"
-=======
-          to="/projects/althemic"
-          imgurl="/images/projects/natours/natours-normal.png"
-          about="A travel booking website made using Nodejs, MongoDB, and Express.js. This was my very first project through which I ever learned!"
->>>>>>> 28bf32c0ea509054306f30476f9919a44c5c8c18
           ltr
         />
       </motion.div>
