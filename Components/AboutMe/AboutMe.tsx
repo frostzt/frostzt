@@ -1,7 +1,6 @@
 import cx from "classnames";
 import { motion } from "framer-motion";
 import styles from "./AboutMe.module.scss";
-import { DivButton } from "../Buttons/Buttons";
 import { contentVarient, headingVarient } from "./varients";
 
 const AboutMe: React.FC = () => {
@@ -13,10 +12,10 @@ const AboutMe: React.FC = () => {
         animate="animated"
         className={styles.content}
       >
-        <motion.h1 variants={headingVarient} className={cx([styles.title, "heading-primary"])}>
+        <motion.h2 variants={headingVarient} className={cx([styles.title, "heading-secondary"])}>
           A Full-Stack Developer and Designer who loves to create things and wants to have an impact
           on the world!
-        </motion.h1>
+        </motion.h2>
       </motion.div>
     </div>
   );
