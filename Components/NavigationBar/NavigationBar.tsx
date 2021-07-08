@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "./NavigationBar.module.scss";
 
 const NavigationBar = () => {
