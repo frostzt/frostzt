@@ -8,12 +8,21 @@
     left: 50%;
     width: 100%;
     position: absolute;
+    padding: 0 3rem 0 3rem;
     transform: translate(-50%, -50%);
 
     .title {
       font-size: 2.8rem;
-      padding: 0 3rem 0 3rem;
       font-weight: 400 !important;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.03);
+      }
     }
   }
 }
