@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  margin-top: 1rem;
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    & > *:last-child {
+      margin-right: 1rem;
+    }
+
+    .link {
+      font-weight: 700;
+      font-size: 1.2rem;
+      position: relative;
+      transition: width 0.3s;
+      text-transform: lowercase;
+
+      &::after {
+        left: 0;
+        top: 50%;
+        width: 0%;
+        content: "";
+        height: 40%;
+        z-index: -1;
+        position: absolute;
+        transition: width 0.3s;
+        background-color: white;
+        transform: translateY(-50%);
+      }
+
+      &:hover::after {
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}

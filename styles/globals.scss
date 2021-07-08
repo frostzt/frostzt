@@ -1,6 +1,7 @@
 :root {
   --background-color: #14171a;
-  --primary-color: #fe5f55;
+  --primary-color: #ffba08;
+  --font-color: #f8f9fa;
 }
 
 *,
@@ -17,6 +18,12 @@ html {
 }
 
 body {
+  color: var(--font-color);
   font-family: "Open Sans", sans-serif;
   background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
 }
