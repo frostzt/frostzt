@@ -1,9 +1,21 @@
 :root {
   --background-color: #14171a;
-  --global-border: #ffd60a;
-  --primary-color: #ffd60a;
+  --global-border: #bc318f;
+  --primary-color: #fec66d;
   --font-color: #f8f9fa;
-  --border-thickness: 0.5rem;
+
+  --background-gradient: radial-gradient(
+      circle farthest-corner at 35% 90%,
+      #fec564,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }
 
 *,
@@ -20,14 +32,15 @@ html {
 }
 
 body {
+  background-size: cover;
   color: var(--font-color);
   font-family: "Open Sans", sans-serif;
-  background-color: var(--background-color);
+  background-image: var(--background-gradient);
 }
 
 a {
+  color: white;
   text-decoration: none;
-  color: var(--primary-color);
 }
 
 // Globally Available Classes
