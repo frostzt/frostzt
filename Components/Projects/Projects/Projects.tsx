@@ -10,9 +10,9 @@ const Projects = () => {
         <Project
           slug="/althemic"
           title="Althemic"
-          primaryColor="#55c57a"
+          primaryColor="#FE7F5B"
           description="A startup of my own. People today are more affected by depression rather than other diseases, Althemic tries to use internet and social media as a way to help people join and find people to talk to!"
-          imageUrl="/images/projects/althemic/althemic-normal.png"
+          image="/images/projects/althemic/althemic-normal.png"
         />
       </div>
     </div>

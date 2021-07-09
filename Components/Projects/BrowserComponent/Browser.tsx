@@ -3,10 +3,11 @@ import Image from "next/image";
 import styles from "./Browser.module.scss";
 
 interface Props {
+  image: string;
   primaryColor: string;
 }
 
-const Browser: React.FC<Props> = ({ primaryColor }) => {
+const Browser: React.FC<Props> = ({ primaryColor, image }) => {
   return (
     <div className={styles.browser}>
       <div className={styles.topBar} style={{ backgroundColor: primaryColor }}>
@@ -17,7 +18,9 @@ const Browser: React.FC<Props> = ({ primaryColor }) => {
         </div>
         <div className={styles.urlBar} />
       </div>
-      <div className={styles.content}>{/* <Image  /> */}</div>
+      <div className={styles.content}>
+        <Image className={styles.image} src={image} alt="Althemic Project" layout="fill" />
+      </div>
     </div>
   );
 };
