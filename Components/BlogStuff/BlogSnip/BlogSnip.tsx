@@ -9,6 +9,7 @@ const BlogSnip = () => {
       <div className={styles.postsContainer}>
         <BlogPost
           title="Failure, according to me"
+          link="https://frostzt.netlify.app/failure/"
           description="Failure is a word I guess literally every person might fear in this world! Be it a man or woman, surprisingly even animals have a sense of it."
         />
       </div>

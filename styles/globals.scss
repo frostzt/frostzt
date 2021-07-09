@@ -1,10 +1,9 @@
 @import "./animations.scss";
 
 :root {
-  --background-color: #14171a;
-  --global-border: #bc318f;
-  --primary-color: #fec66d;
   --font-color: #f8f9fa;
+  --primary-color: #fec66d;
+  --background-color: #14171a;
 
   --background-gradient: radial-gradient(
       circle farthest-corner at 35% 90%,
@@ -48,6 +47,7 @@ a {
 
 // Globally Available Classes
 .make-special {
+  // Make anything into glowing and animated gradient
   color: transparent;
   display: inline-block;
   background-clip: text;
