@@ -34,9 +34,8 @@
 }
 
 .animate {
-  color: transparent;
   background-clip: text;
   background-size: 400% 400%;
   background-image: var(--background-gradient);
-  animation: moveBackgroundSlow 12s infinite ease-in-out;
+  animation: moveBackgroundSlow 12s infinite ease;
 }

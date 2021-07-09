@@ -14,7 +14,7 @@ const Header = () => {
       } else {
         setCounter((counter) => counter + 1);
       }
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
