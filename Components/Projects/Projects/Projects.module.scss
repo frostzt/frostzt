@@ -12,4 +12,10 @@
     font-size: 3.4rem;
     margin-bottom: 2rem;
   }
+
+  .projectsContainer {
+    & > *:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
 }

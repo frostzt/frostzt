@@ -28,8 +28,8 @@
     display: flex;
     height: 2.2rem;
     align-items: center;
-    justify-content: space-between;
     padding-right: 1rem;
+    justify-content: space-between;
     background-color: rgb(142, 142, 147);
 
     .buttons {
@@ -53,6 +53,7 @@
       height: 1rem;
       border-radius: 0.5rem;
       background-color: white;
+      filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.2));
     }
   }
 
