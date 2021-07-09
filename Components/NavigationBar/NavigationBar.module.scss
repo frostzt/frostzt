@@ -19,25 +19,13 @@
       font-weight: 700;
       font-size: 1.2rem;
       position: relative;
-      transition: width 0.3s;
       text-transform: lowercase;
+      transition: all 0.3s ease-in-out;
+      border-bottom: 0.1rem solid transparent;
 
-      &::after {
-        left: 0;
-        top: 50%;
-        width: 0%;
-        content: "";
-        height: 40%;
-        z-index: -1;
-        position: absolute;
-        transition: width 0.3s;
-        background-color: white;
-        transform: translateY(-50%);
-      }
-
-      &:hover::after {
-        width: 100%;
+      &:hover {
         cursor: pointer;
+        border-bottom: 0.1rem solid var(--primary-color);
       }
     }
   }
