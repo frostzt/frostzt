@@ -1,3 +1,5 @@
+@import "../../../styles/mixins.scss";
+
 .post {
   padding-bottom: 2rem;
   background-color: var(--background-color);
@@ -6,6 +8,10 @@
     font-weight: 700;
     font-size: 1.7rem;
     margin-bottom: 0.6rem;
+
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 
   .description {
