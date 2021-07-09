@@ -1,15 +1,32 @@
 import cx from "classnames";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styles from "./AboutMe.module.scss";
 import { contentVarient, headingVarient } from "./aboutme.varients";
 
 const AboutMe: React.FC = () => {
+  const [aboutMeRef, aboutMeInView] = useInView({
+    threshold: 0.5,
+  });
+  const animSeq = useAnimation();
+
+  const sequence = async () => {
+    return await animSeq.start("animated");
+  };
+
+  useEffect(() => {
+    if (aboutMeInView) {
+      sequence();
+    }
+  }, [aboutMeInView]);
+
   return (
-    <div className={styles.container}>
+    <div ref={aboutMeRef} className={styles.container}>
       <motion.div
         variants={contentVarient}
+        animate={animSeq}
         initial="initial"
-        animate="animated"
         className={styles.content}
       >
         <motion.h2 variants={headingVarient} className={cx([styles.title, "heading-secondary"])}>
