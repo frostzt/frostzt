@@ -6,6 +6,7 @@ import Header from "../Components/Header/Header";
 import AboutMe from "../Components/AboutMe/AboutMe";
 import BlogSnip from "../Components/BlogStuff/BlogSnip/BlogSnip";
 import Projects from "../Components/Projects/Projects/Projects";
+import Footer from "../Components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <AboutMe />
       <BlogSnip />
       <Projects />
+      <Footer />
     </div>
   );
 }
