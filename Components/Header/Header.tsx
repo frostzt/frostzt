@@ -4,12 +4,13 @@ import styles from "./Header.module.scss";
 import NavigationBar from "../NavigationBar/NavigationBar";
 
 const Header = () => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (counter === 2) {
-        setCounter(0);
+      // console.log("In interval the value is: " + counter);
+      if (counter === 3) {
+        setCounter(1);
       } else {
         setCounter((counter) => counter + 1);
       }
@@ -18,20 +19,25 @@ const Header = () => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(counter);
+  // console.log("Globally the value is: " + counter);
 
   return (
     <div className={styles.container}>
       <NavigationBar />
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>
-          <span className={cx([styles.heading__part, counter === 0 ? styles.animate : null])}>
+          <span
+            className={cx([
+              styles.heading__part,
+              counter % 3 !== 2 && counter % 3 !== 0 ? styles.animate : null,
+            ])}
+          >
             DESIGN
           </span>
-          <span className={cx([styles.heading__part, counter === 1 ? styles.animate : null])}>
+          <span className={cx([styles.heading__part, counter % 3 === 2 ? styles.animate : null])}>
             DEVELOP
           </span>
-          <span className={cx([styles.heading__part, counter === 2 ? styles.animate : null])}>
+          <span className={cx([styles.heading__part, counter % 3 === 0 ? styles.animate : null])}>
             IMPROVE
           </span>
         </h1>
