@@ -1,3 +1,5 @@
+@import "./animations.scss";
+
 :root {
   --background-color: #14171a;
   --global-border: #bc318f;
@@ -32,10 +34,11 @@ html {
 }
 
 body {
-  background-size: cover;
   color: var(--font-color);
+  background-size: 400% 400%;
   font-family: "Open Sans", sans-serif;
   background-image: var(--background-gradient);
+  animation: moveBodyBackgroundNormal 20s ease infinite;
 }
 
 a {
@@ -44,6 +47,19 @@ a {
 }
 
 // Globally Available Classes
+.make-special {
+  color: transparent;
+  display: inline-block;
+  background-clip: text;
+  background-size: 400% 400%;
+  background-image: var(--background-gradient);
+  animation: moveBodyBackgroundNormal 18s ease infinite;
+}
+
 .heading-primary {
   font-weight: 700; // Override this if needed
+}
+
+.heading-secondary {
+  font-weight: 700;
 }

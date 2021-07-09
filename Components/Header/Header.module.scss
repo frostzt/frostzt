@@ -17,6 +17,9 @@
     .content {
       margin-top: 2rem;
       font-size: 1.6rem;
+      display: inline-block;
+      padding-bottom: 0.4rem;
+      border-bottom: 0.2rem solid var(--primary-color);
     }
 
     .heading {
@@ -37,5 +40,5 @@
   background-clip: text;
   background-size: 400% 400%;
   background-image: var(--background-gradient);
-  animation: moveBackgroundSlow 12s infinite ease;
+  animation: moveBackgroundNormal 12s infinite ease;
 }

@@ -14,7 +14,7 @@ const AboutMe: React.FC = () => {
       >
         <motion.h2 variants={headingVarient} className={cx([styles.title, "heading-secondary"])}>
           A Full-Stack Developer and Designer who loves to create things and wants to have an impact
-          on the world!
+          on the world! I think a lot!
         </motion.h2>
       </motion.div>
     </div>

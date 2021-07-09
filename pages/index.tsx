@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.scss";
 // Components
 import Header from "../Components/Header/Header";
 import AboutMe from "../Components/AboutMe/AboutMe";
+import BlogSnip from "../Components/BlogStuff/BlogSnip/BlogSnip";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <Header />
       <AboutMe />
+      <BlogSnip />
     </div>
   );
 }
