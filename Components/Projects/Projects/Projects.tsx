@@ -12,7 +12,7 @@ const Projects = () => {
           title="Althemic"
           primaryColor="#FE7F5B"
           description="A startup of my own. People today are more affected by depression rather than other diseases, Althemic tries to use internet and social media as a way to help people join and find people to talk to!"
-          image="/images/projects/althemic/althemic-normal.png"
+          image="/images/projects/althemic/althemic.png"
         />
       </div>
     </div>

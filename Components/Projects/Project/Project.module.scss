@@ -3,5 +3,17 @@
 
   .wrapper {
     width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    .title {
+      margin-top: 1rem;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+
+    .description {
+      font-weight: 300;
+    }
   }
 }
