@@ -1,0 +1,63 @@
+.browser {
+  width: 90%;
+  height: 12rem;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.6rem;
+  flex-direction: column;
+  background-color: rgb(230, 230, 230);
+
+  .topBar {
+    width: 100%;
+    display: flex;
+    height: 2.2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+    background-color: rgb(142, 142, 147);
+
+    .buttons {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      margin-left: 1rem;
+      align-items: center;
+      justify-content: space-between;
+
+      &_btn {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.3));
+      }
+    }
+
+    .urlBar {
+      width: 70%;
+      height: 1rem;
+      border-radius: 0.5rem;
+      background-color: white;
+    }
+  }
+
+  .content {
+    width: 95%;
+    height: 72%;
+    position: relative;
+    margin-bottom: 0.6rem;
+    background-color: white;
+  }
+}
+
+.red {
+  background-color: rgb(255, 59, 48);
+}
+.orange {
+  background-color: rgb(255, 149, 0);
+}
+.green {
+  background-color: rgb(40, 205, 65);
+}

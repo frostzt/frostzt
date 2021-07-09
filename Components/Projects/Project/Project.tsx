@@ -1,3 +1,4 @@
+import Browser from "../BrowserComponent/Browser";
 import styles from "./Project.module.scss";
 
 interface Props {
@@ -14,7 +15,9 @@ interface Props {
 const Project: React.FC<Props> = ({ slug, title, imageUrl, description, primaryColor }) => {
   return (
     <div key={slug} className={styles.project}>
-      <div className={styles.wrapper}></div>
+      <div className={styles.wrapper}>
+        <Browser primaryColor={primaryColor} />
+      </div>
     </div>
   );
 };
