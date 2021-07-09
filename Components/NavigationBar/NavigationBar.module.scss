@@ -25,6 +25,8 @@
 
       &:hover {
         cursor: pointer;
+        background-clip: text;
+        background-image: var(--background-gradient);
         border-bottom: 0.1rem solid var(--primary-color);
       }
     }

@@ -1,15 +1,21 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./NavigationBar.module.scss";
+import { linkVarient, parentVarient } from "./navigation-bar.varients";
 
 const NavigationBar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.links}>
-        <div className={styles.link}>
+      <motion.div
+        variants={parentVarient}
+        initial="initial"
+        animate="animated"
+        className={styles.links}
+      >
+        <motion.div variants={linkVarient} className={styles.link}>
           <Link href="/skills">skills</Link>
-        </div>
-        <div className={styles.link}>
+        </motion.div>
+        <motion.div variants={linkVarient} className={styles.link}>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -17,8 +23,8 @@ const NavigationBar = () => {
           >
             contact
           </a>
-        </div>
-        <div className={styles.link}>
+        </motion.div>
+        <motion.div variants={linkVarient} className={styles.link}>
           <a
             target="_blank"
             rel="noreferrer"
@@ -26,8 +32,8 @@ const NavigationBar = () => {
           >
             resume
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

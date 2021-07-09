@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { motion } from "framer-motion";
 import styles from "./AboutMe.module.scss";
-import { contentVarient, headingVarient } from "./varients";
+import { contentVarient, headingVarient } from "./aboutme.varients";
 
 const AboutMe: React.FC = () => {
   return (

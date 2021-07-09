@@ -1,7 +1,9 @@
 import cx from "classnames";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import { nameVarient, parentVarient, spanVarient } from "./header.varients";
 
 const Header = () => {
   const [counter, setCounter] = useState(1);
@@ -25,23 +27,42 @@ const Header = () => {
     <div className={styles.container}>
       <NavigationBar />
       <div className={styles.wrapper}>
-        <h1 className={styles.heading}>
-          <span
+        <motion.h1
+          variants={parentVarient}
+          initial="initial"
+          animate="animated"
+          className={styles.heading}
+        >
+          <motion.span
+            variants={spanVarient}
             className={cx([
               styles.heading__part,
               counter % 3 !== 2 && counter % 3 !== 0 ? styles.animate : null,
             ])}
           >
             DESIGN
-          </span>
-          <span className={cx([styles.heading__part, counter % 3 === 2 ? styles.animate : null])}>
+          </motion.span>
+          <motion.span
+            variants={spanVarient}
+            className={cx([styles.heading__part, counter % 3 === 2 ? styles.animate : null])}
+          >
             DEVELOP
-          </span>
-          <span className={cx([styles.heading__part, counter % 3 === 0 ? styles.animate : null])}>
+          </motion.span>
+          <motion.span
+            variants={spanVarient}
+            className={cx([styles.heading__part, counter % 3 === 0 ? styles.animate : null])}
+          >
             IMPROVE
-          </span>
-        </h1>
-        <p className={styles.content}>Hi! I am Sourav.</p>
+          </motion.span>
+        </motion.h1>
+        <motion.p
+          variants={nameVarient}
+          initial="initial"
+          animate="animated"
+          className={styles.content}
+        >
+          Hi! I am Sourav.
+        </motion.p>
       </div>
     </div>
   );
