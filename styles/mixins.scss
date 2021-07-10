@@ -1,3 +1,5 @@
+@import "./animations.scss";
+
 // Mixins
 @mixin make-special {
   color: transparent;
@@ -5,5 +7,5 @@
   background-clip: text;
   background-size: 400% 400%;
   background-image: var(--background-gradient);
-  animation: moveBodyBackgroundNormal 18s ease infinite;
+  animation: moveBodyBackgroundNormal 8s ease infinite;
 }
