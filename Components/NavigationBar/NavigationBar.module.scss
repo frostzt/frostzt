@@ -1,3 +1,6 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/reponsiveness.scss";
+
 .container {
   width: 100%;
   padding-top: 1rem;
@@ -9,10 +12,18 @@
 
     & > *:not(:last-child) {
       margin-right: 2rem;
+
+      @include respond(hugeScreen) {
+        margin-right: 3rem;
+      }
     }
 
     & > *:last-child {
       margin-right: 1rem;
+
+      @include respond(hugeScreen) {
+        margin-right: 2rem;
+      }
     }
 
     .link {
@@ -23,11 +34,22 @@
       transition: all 0.3s ease-in-out;
       border-bottom: 0.1rem solid transparent;
 
-      &:hover {
+      @include respond(tablet) {
+        font-size: 1.7rem;
+      }
+
+      @include respond(hugeScreen) {
+        font-size: 2.2rem;
+      }
+
+      a {
+        transition: all 0.3s;
+      }
+
+      &:hover a {
         cursor: pointer;
-        background-clip: text;
-        background-image: var(--background-gradient);
-        border-bottom: 0.1rem solid var(--primary-color);
+        color: transparent;
+        @include make-special;
       }
     }
   }

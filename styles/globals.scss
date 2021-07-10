@@ -1,4 +1,5 @@
 @import "./animations.scss";
+@import "./reponsiveness.scss";
 
 :root {
   --font-color: #f8f9fa;
@@ -30,6 +31,26 @@
 html {
   font-size: 62.5%; // 1rem = 10px
   box-sizing: border-box;
+
+  @include respond(mobileMedium) {
+    font-size: 68%;
+  }
+
+  @include respond(mobileLarge) {
+    font-size: 72%;
+  }
+
+  @include respond(tablet) {
+    font-size: 82%;
+  }
+
+  @include respond(fullHD) {
+    font-size: 90%;
+  }
+
+  @include respond(hugeScreen) {
+    font-size: 100%;
+  }
 }
 
 body {

@@ -1,5 +1,14 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/reponsiveness.scss";
+
 .project {
   width: 100%;
+
+  @include respond(commonDesktop) {
+    width: 50%;
+    height: auto;
+    display: inline-block;
+  }
 
   .wrapper {
     width: 100%;
@@ -9,11 +18,38 @@
     .title {
       margin-top: 1rem;
       margin-bottom: 0.6rem;
+      transition: all 0.3s ease;
       text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+        color: var(--primary-color);
+      }
+
+      @include respond(tablet) {
+        font-size: 2.2rem;
+      }
+
+      @include respond(hugeScreen) {
+        font-size: 3.6rem;
+      }
     }
 
     .description {
       font-weight: 300;
+
+      @include respond(tablet) {
+        font-size: 1.4rem;
+      }
+
+      @include respond(commonDesktop) {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      @include respond(hugeScreen) {
+        font-size: 2rem;
+      }
     }
   }
 }

@@ -13,7 +13,7 @@ const BlogPost: React.FC<Props> = ({ title, description, link }) => {
         <h3 className={styles.title}>{title}</h3>
       </a>
       <p className={styles.description}>{description}</p>
-      <a className="make-special" href={link} target="_blank" rel="noreferrer">
+      <a className={styles.readmore} href={link} target="_blank" rel="noreferrer">
         Read more.
       </a>
     </div>

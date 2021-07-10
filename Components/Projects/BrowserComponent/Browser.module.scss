@@ -1,3 +1,5 @@
+@import "../../../styles/reponsiveness.scss";
+
 .browser {
   width: 21rem;
   height: 12rem;
@@ -11,6 +13,16 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: rgb(230, 230, 230);
+
+  @include respond(tablet) {
+    width: 33.6rem;
+    height: 19.2rem;
+  }
+
+  @include respond(hugeScreen) {
+    width: 46.2rem;
+    height: 26.4rem;
+  }
 
   .blackout {
     top: 0;
@@ -32,6 +44,14 @@
     justify-content: space-between;
     background-color: rgb(142, 142, 147);
 
+    @include respond(tablet) {
+      height: 2.4rem;
+    }
+
+    @include respond(hugeScreen) {
+      height: 2.8rem;
+    }
+
     .buttons {
       width: 20%;
       height: 100%;
@@ -39,6 +59,10 @@
       margin-left: 1rem;
       align-items: center;
       justify-content: space-between;
+
+      @include respond(tablet) {
+        width: 13%;
+      }
 
       &_btn {
         width: 1rem;
@@ -54,6 +78,10 @@
       border-radius: 0.5rem;
       background-color: white;
       filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.2));
+
+      @include respond(tablet) {
+        width: 80%;
+      }
     }
   }
 
@@ -63,6 +91,14 @@
     position: relative;
     margin-bottom: 0.6rem;
     background-color: white;
+
+    @include respond(tablet) {
+      height: 78%;
+    }
+
+    @include respond(hugeScreen) {
+      height: 82%;
+    }
 
     .image {
       object-fit: cover;

@@ -6,6 +6,10 @@ const Projects = () => {
   return (
     <div className={styles.container}>
       <h2 className={cx([styles.title, "heading-secondary", "make-special"])}>Projects</h2>
+      <p className={styles.description}>
+        All the projects are hosted on Heroku, and when using a free-account it creates dyno and
+        puts them to sleep if not used, so it is not the sites that are slow but Heroku in general!
+      </p>
       <div className={styles.projectsContainer}>
         <Project
           slug="/projects/althemic"
@@ -18,7 +22,7 @@ const Projects = () => {
           slug="/projects/natours"
           title="Natours"
           primaryColor="#55c57a"
-          description="I learnt how to use Expressjs, MongoDB, and Nodejs to create a highly scalable and maintainable API, with that also learnt how to use Pug to render server-side pages. Not just learnt how to write code but how to write it in a correct manner."
+          description="Learnt Expressjs, MongoDB, and Nodejs to create a highly scalable and maintainable API, with that also learnt how to use Pug to render server-side pages, and the right way to write code."
           image="/images/projects/natours/natours.png"
         />
         <Project
@@ -39,7 +43,7 @@ const Projects = () => {
           slug="/projects/reactive-clothing"
           title="Reactive Clothing"
           primaryColor="#35363a"
-          description="Learnt React and a lot of other stuff, mastered ContextAPI and Redux. Not just writing code in this. I just hate copy paste, but rather learnt the correct way to write huge react code that can be maintained since Redux is quite big!"
+          description="Learnt React and a lot of other stuff, mastered ContextAPI and Redux. I just hate copy paste, rather learnt the correct way to write huge react code that can be maintained since Redux is quite big!"
           image="/images/projects/reactive-clothing/reactive-clothing.png"
         />
         <Project
