@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "./althemic.module.scss";
-import { OutLinkDivButton, LinkDivButton } from "../../../Components/Buttons/Buttons";
 
 // Bootstrappers
 import Wrapper from "../../../Bootstrappers/Wrapper/Wrapper";

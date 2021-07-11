@@ -5,8 +5,8 @@
   justify-content: space-evenly;
 
   &__back {
-    background-color: transparent;
     border: 1px solid white;
+    background-color: transparent !important;
   }
 
   &__visit {
