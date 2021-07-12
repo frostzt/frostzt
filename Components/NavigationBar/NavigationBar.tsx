@@ -12,9 +12,9 @@ const NavigationBar = () => {
         animate="animated"
         className={styles.links}
       >
-        <motion.div variants={linkVarient} className={styles.link}>
+        {/* <motion.div variants={linkVarient} className={styles.link}>
           <Link href="/skills">skills</Link>
-        </motion.div>
+        </motion.div> */}
         <motion.div variants={linkVarient} className={styles.link}>
           <a
             target="_blank"
