@@ -15,7 +15,7 @@ const Trillo = () => {
         <title>Trillo - Project</title>
         <meta name="description" content="Trillo project by frostzt!" />
       </Head>
-      <Wrapper extraClasses={[styles.wrapper]}>
+      <Wrapper>
         <ProjectHeader
           title="Trillo"
           primaryColor="#eb2f64"

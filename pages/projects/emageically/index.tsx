@@ -15,7 +15,7 @@ const Emageically = () => {
         <title>Emageically - Project</title>
         <meta name="description" content="Emageically project by frostzt!" />
       </Head>
-      <Wrapper extraClasses={[styles.wrapper]}>
+      <Wrapper>
         <ProjectHeader
           title="Emageically"
           primaryColor="#fe7f5b"

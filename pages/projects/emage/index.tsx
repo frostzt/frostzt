@@ -15,7 +15,7 @@ const Emage = () => {
         <title>Emage - Project</title>
         <meta name="description" content="Emage project by frostzt!" />
       </Head>
-      <Wrapper extraClasses={[styles.wrapper]}>
+      <Wrapper>
         <ProjectHeader
           title="Emage"
           primaryColor="#ffffff"

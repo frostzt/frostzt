@@ -15,7 +15,7 @@ const Natours = () => {
         <title>Natours - Project</title>
         <meta name="description" content="Natours project by frostzt!" />
       </Head>
-      <Wrapper extraClasses={[styles.wrapper]}>
+      <Wrapper>
         <ProjectHeader
           title="Natours"
           primaryColor="#55c57a"

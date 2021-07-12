@@ -15,7 +15,7 @@ const ReactiveClothing = () => {
         <title>Reactive Clothing - Project</title>
         <meta name="description" content="Reactive Clothing project by frostzt!" />
       </Head>
-      <Wrapper extraClasses={[styles.wrapper]}>
+      <Wrapper>
         <ProjectHeader
           title="Reactive Clothing"
           primaryColor="#35363a"

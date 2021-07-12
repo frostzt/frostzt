@@ -1,6 +1,36 @@
+@import "../../styles/reponsiveness.scss";
+
 .wrapper {
   width: 100%;
   height: 100%;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem 2rem;
   background-color: var(--background-color);
+
+  @include respond(mobileMedium) {
+    padding: 1.2rem 4rem 3rem 4rem;
+  }
+
+  @include respond(mobileLarge) {
+    padding: 1.2rem 4rem 3rem 4rem;
+  }
+
+  @include respond(tablet) {
+    padding: 1.2rem 12rem 4rem 12rem;
+  }
+
+  @include respond(laptop) {
+    padding: 2rem 15rem 4rem 15rem;
+  }
+
+  @include respond(commonDesktop) {
+    padding: 2.5rem 20rem 4rem 20rem;
+  }
+
+  @include respond(fullHD) {
+    padding: 3rem 25rem 4rem 25rem;
+  }
+
+  @include respond(hugeScreen) {
+    padding: 3rem 35rem 5rem 35rem;
+  }
 }

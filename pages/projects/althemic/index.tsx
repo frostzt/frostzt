@@ -15,7 +15,7 @@ const Althemic = () => {
         <title>Althemic - Project</title>
         <meta name="description" content="Althemic project by frostzt!" />
       </Head>
-      <Wrapper extraClasses={[styles.wrapper]}>
+      <Wrapper>
         <ProjectHeader
           title="Althemic"
           primaryColor="#fe7f5b"
