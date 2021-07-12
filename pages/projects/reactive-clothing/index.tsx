@@ -19,15 +19,16 @@ const ReactiveClothing = () => {
         <ProjectHeader
           title="Reactive Clothing"
           primaryColor="#35363a"
-          description="A startup of my own. People today are more affected by depression rather than other diseases, Althemic tries to use internet and social media as a way to help people join and find people to talk to!"
+          description="A retail clothing store designed using Reactjs, Redux, SCSS. This is where I mastered React and its respective design patterns. I believe that the correct design patterns are more important than just knowing how to code."
         />
         <ImageDescriptor
           imageSource="/images/projects/reactive-clothing/reactive-clothing.png"
-          description="Althemic, built using Reactjs, Redux, SCSS, and other libraries."
+          description="Reactive Clothing, built using Reactjs, Redux, SCSS, and other libraries."
         />
         <DetailedDescription>
-          Althemic is a side project that I made it is yet in Alpha stage and registration is almost
-          disabled to prevent people from doing meaningless stuff.
+          Reactive clothing is where I mastered React and Redux design patterns. I learnt how to
+          write scaleable and maintainable React and Redux code. With proper use of SCSS modules for
+          styling.
           <br />
           <br />
           It is built using Reactjs, Redux, and custom CSS styling. The main reason this project is
@@ -40,7 +41,7 @@ const ReactiveClothing = () => {
           really good and performant. However being experienced with Thunk I think the only thing
           that is involved is the added level of complexity.
         </DetailedDescription>
-        <ButtonsGroup link="https://althemic-alpha.herokuapp.com/" />
+        <ButtonsGroup link="https://reactive-clothing.herokuapp.com/" />
       </Wrapper>
     </div>
   );
