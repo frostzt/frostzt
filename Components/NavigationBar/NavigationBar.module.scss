@@ -1,0 +1,56 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/reponsiveness.scss";
+
+.container {
+  width: 100%;
+  padding-top: 1rem;
+  background-color: var(--background-color);
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+
+      @include respond(hugeScreen) {
+        margin-right: 3rem;
+      }
+    }
+
+    & > *:last-child {
+      margin-right: 1rem;
+
+      @include respond(hugeScreen) {
+        margin-right: 2rem;
+      }
+    }
+
+    .link {
+      font-weight: 700;
+      font-size: 1.2rem;
+      position: relative;
+      text-transform: lowercase;
+      transition: all 0.3s ease-in-out;
+      border-bottom: 0.1rem solid transparent;
+
+      @include respond(tablet) {
+        font-size: 1.7rem;
+      }
+
+      @include respond(hugeScreen) {
+        font-size: 2.2rem;
+      }
+
+      a {
+        transition: all 0.3s;
+      }
+
+      &:hover a {
+        cursor: pointer;
+        color: transparent;
+        @include make-special;
+      }
+    }
+  }
+}

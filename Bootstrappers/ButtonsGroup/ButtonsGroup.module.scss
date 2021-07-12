@@ -1,0 +1,16 @@
+@import "../../styles/mixins.scss";
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__back {
+    border: 1px solid white;
+    background-color: transparent !important;
+  }
+
+  &__visit {
+    @include make-special;
+    border: 1px solid var(--primary-color);
+  }
+}

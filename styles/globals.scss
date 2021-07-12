@@ -1,0 +1,86 @@
+@import "./animations.scss";
+@import "./reponsiveness.scss";
+
+:root {
+  --font-color: #f8f9fa;
+  --primary-color: #fec66d;
+  --background-color: #14171a;
+
+  --background-gradient: radial-gradient(
+      circle farthest-corner at 35% 90%,
+      #fec564,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+  box-sizing: border-box;
+
+  @include respond(mobileMedium) {
+    font-size: 68%;
+  }
+
+  @include respond(mobileLarge) {
+    font-size: 72%;
+  }
+
+  @include respond(tablet) {
+    font-size: 82%;
+  }
+
+  @include respond(fullHD) {
+    font-size: 90%;
+  }
+
+  @include respond(hugeScreen) {
+    font-size: 100%;
+  }
+}
+
+body {
+  color: var(--font-color);
+  background-size: 400% 400%;
+  font-family: "Open Sans", sans-serif;
+  background-image: var(--background-gradient);
+  animation: moveBodyBackgroundNormal 20s ease infinite;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+// Globally Available Classes
+.make-special {
+  // Make anything into glowing and animated gradient
+  color: transparent;
+  display: inline-block;
+  background-clip: text;
+  background-size: 400% 400%;
+  background-image: var(--background-gradient);
+  animation: moveBodyBackgroundNormal 18s ease infinite;
+}
+
+.heading-primary {
+  font-weight: 700; // Override this if needed
+}
+
+.heading-secondary {
+  font-weight: 700;
+}
