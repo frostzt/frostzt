@@ -11,6 +11,18 @@
     }
   }
 
+  @if $breakpoint == tabletSmall {
+    @media only screen and (min-width: 31.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tabletMedium {
+    @media only screen and (min-width: 43.125em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == tablet {
     @media only screen and (min-width: 48em) {
       @content;

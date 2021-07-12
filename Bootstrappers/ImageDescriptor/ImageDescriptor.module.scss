@@ -13,6 +13,16 @@
     position: relative;
     margin-bottom: 1rem;
 
+    @include respond(tabletSmall) {
+      width: 92%;
+      height: 16.5rem;
+    }
+
+    @include respond(tabletMedium) {
+      width: 92%;
+      height: 16.5rem;
+    }
+
     @include respond(tablet) {
       width: 92%;
       height: 16.5rem;

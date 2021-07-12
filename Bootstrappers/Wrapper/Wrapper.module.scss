@@ -14,6 +14,14 @@
     padding: 1.2rem 4rem 3rem 4rem;
   }
 
+  @include respond(tabletSmall) {
+    padding: 1.2rem 8rem 3rem 8rem;
+  }
+
+  @include respond(tabletMedium) {
+    padding: 1.2rem 10rem 3rem 10rem;
+  }
+
   @include respond(tablet) {
     padding: 1.2rem 12rem 4rem 12rem;
   }
