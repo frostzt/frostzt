@@ -28,7 +28,7 @@ const NavigationBar = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://drive.google.com/file/d/1FAoBmLjnoeEryZuMoeun2ElRGHownOei/view?usp=sharing"
+            href="https://drive.google.com/file/d/1mxWVtuQaOzt2kTo_Qsv1bpmZSLLBNMLI/view?usp=sharing"
           >
             resume
           </a>
