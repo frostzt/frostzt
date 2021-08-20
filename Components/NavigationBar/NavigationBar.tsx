@@ -24,7 +24,7 @@ const NavigationBar = () => {
             contact
           </a>
         </motion.div>
-        <motion.div variants={linkVarient} className={styles.link}>
+        {/* <motion.div variants={linkVarient} className={styles.link}>
           <a
             target="_blank"
             rel="noreferrer"
@@ -32,7 +32,7 @@ const NavigationBar = () => {
           >
             resume
           </a>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   );

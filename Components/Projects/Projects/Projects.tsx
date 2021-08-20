@@ -7,7 +7,7 @@ const Projects = () => {
     <div className={styles.container}>
       <h2 className={cx([styles.title, "heading-secondary", "make-special"])}>Projects</h2>
       <p className={styles.description}>
-        All the projects are hosted on Heroku, and when using a free-account it creates dyno and
+        All the projects are hosted on Heroku, and when using a free-account it creates dyno(s) and
         puts them to sleep if not used, so it is not the sites that are slow but Heroku in general!
       </p>
       <div className={styles.projectsContainer}>
