@@ -24,15 +24,6 @@ const NavigationBar = () => {
             contact
           </a>
         </motion.div>
-        {/* <motion.div variants={linkVarient} className={styles.link}>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://drive.google.com/file/d/1mxWVtuQaOzt2kTo_Qsv1bpmZSLLBNMLI/view?usp=sharing"
-          >
-            resume
-          </a>
-        </motion.div> */}
       </motion.div>
     </div>
   );
