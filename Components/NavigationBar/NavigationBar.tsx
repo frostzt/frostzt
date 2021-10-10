@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./NavigationBar.module.scss";
 import { linkVarient, parentVarient } from "./navigation-bar.varients";

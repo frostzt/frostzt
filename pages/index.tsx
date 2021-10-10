@@ -1,4 +1,6 @@
 import Head from "next/head";
+
+// Styling
 import styles from "../styles/Home.module.scss";
 
 // Components
@@ -7,7 +9,6 @@ import AboutMe from "../Components/AboutMe/AboutMe";
 import BlogSnip from "../Components/BlogStuff/BlogSnip/BlogSnip";
 import Projects from "../Components/Projects/Projects/Projects";
 import Footer from "../Components/Footer/Footer";
-import { getSortedPost } from "../lib/posts";
 
 export default function Home() {
   return (
@@ -25,11 +26,3 @@ export default function Home() {
     </div>
   );
 }
-
-export const getStaticProps = () => {
-  getSortedPost();
-
-  return {
-    props: {},
-  };
-};
