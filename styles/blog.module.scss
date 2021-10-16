@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--background-color);
+
+  .title {
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 2.6rem;
+
+    &__sub {
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+    }
+  }
+}

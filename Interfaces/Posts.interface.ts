@@ -3,4 +3,5 @@ export interface PostMetaData {
   id: string;
   slug: string;
   title: string;
+  desc: string;
 }
