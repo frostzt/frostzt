@@ -18,8 +18,6 @@ interface Props {
 }
 
 const Blog: React.FC<Props> = ({ allPostsData }) => {
-  console.log(allPostsData);
-
   return (
     <div className={styles.container}>
       <NavigationBar />

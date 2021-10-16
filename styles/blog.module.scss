@@ -14,4 +14,12 @@
       margin-top: 0.5rem;
     }
   }
+
+  .blogs {
+    margin-top: 5rem;
+
+    & > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
 }
