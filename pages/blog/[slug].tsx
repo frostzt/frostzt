@@ -1,19 +1,15 @@
 import React from "react";
 
 // Lib
-import { getSortedPost } from "../../lib/posts";
+import { getPostsSlug } from "../../lib/posts";
 
 // Layout
 import BlogLayout from "../../Layout/BlogLayout/BlogLayout";
 import { PostMetaData } from "../../Interfaces/Posts.interface";
 
-interface Props {
-  paths: PostMetaData[];
-}
+interface Props {}
 
-const BlogPost: React.FC<Props> = ({ paths }) => {
-  console.log(paths);
-
+const BlogPost: React.FC<Props> = () => {
   return (
     <BlogLayout>
       <div className=""></div>
@@ -24,7 +20,7 @@ const BlogPost: React.FC<Props> = ({ paths }) => {
 export default BlogPost;
 
 export const getStaticPaths = () => {
-  const paths = getSortedPost();
+  const paths = getPostsSlug();
 
   return {
     paths,

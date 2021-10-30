@@ -42,6 +42,18 @@ export const getSortedPost = () => {
   });
 };
 
+/**
+ * Returns all the slug for all the posts
+ * @returns PostSlugs[]
+ */
 export const getPostsSlug = () => {
   const fileNames = fs.readdirSync(postsDirectory);
+
+  return fileNames.map((fileName) => {
+    return {
+      params: {
+        slug: fileName.replace(/\.md$/, ""),
+      },
+    };
+  });
 };
