@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./NavigationBar.module.scss";
 import { linkVarient, parentVarient } from "./navigation-bar.varients";
@@ -14,6 +15,12 @@ const NavigationBar = () => {
         {/* <motion.div variants={linkVarient} className={styles.link}>
           <Link href="/skills">skills</Link>
         </motion.div> */}
+        <motion.div variants={linkVarient} className={styles.link}>
+          <Link href="/">home</Link>
+        </motion.div>
+        <motion.div variants={linkVarient} className={styles.link}>
+          <Link href="/blog">blog</Link>
+        </motion.div>
         <motion.div variants={linkVarient} className={styles.link}>
           <a
             target="_blank"

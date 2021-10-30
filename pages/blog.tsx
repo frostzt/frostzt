@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 // Interfaces
 import { PostMetaData } from "../Interfaces/Posts.interface";
@@ -20,6 +21,11 @@ interface Props {
 const Blog: React.FC<Props> = ({ allPostsData }) => {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>frostzt&apos;s blog</title>
+        <meta name="description" content="Sourav Singh Rawat's Portfolio" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NavigationBar />
       <h1 className={styles.title}>BLOG</h1>
       <p className={styles.title__sub}>

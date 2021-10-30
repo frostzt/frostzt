@@ -5,6 +5,10 @@ import { v4 as uuidv4 } from "uuid";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
+/**
+ * Returns Posts Meta Data as an arrary.
+ * @returns PostMetaData[]
+ */
 export const getSortedPost = () => {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -36,4 +40,8 @@ export const getSortedPost = () => {
       return 0;
     }
   });
+};
+
+export const getPostsSlug = () => {
+  const fileNames = fs.readdirSync(postsDirectory);
 };
