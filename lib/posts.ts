@@ -57,3 +57,21 @@ export const getPostsSlug = () => {
     };
   });
 };
+
+/**
+ * Returns the data for the currently selected post
+ * @param slug string, slug of the post
+ * @returns PostData
+ */
+export const getPostData = (slug: string) => {
+  const fullPath = path.join(postsDirectory, `${slug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf-8");
+
+  // Parse meta data
+  const matterResult = matter(fileContents);
+
+  return {
+    slug,
+    ...matterResult.data,
+  };
+};

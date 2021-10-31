@@ -1,29 +1,56 @@
 import React from "react";
+import Head from "next/head";
 
 // Lib
-import { getPostsSlug } from "../../lib/posts";
+import { getPostsSlug, getPostData } from "../../lib/posts";
 
 // Layout
 import BlogLayout from "../../Layout/BlogLayout/BlogLayout";
-import { PostMetaData } from "../../Interfaces/Posts.interface";
 
-interface Props {}
+interface PostData {
+  date: string;
+  desc: string;
+  slug: string;
+  title: string;
+}
+interface Props {
+  postData: PostData;
+}
 
-const BlogPost: React.FC<Props> = () => {
+const BlogPost: React.FC<Props> = ({ postData }) => {
+  console.log(postData);
+
   return (
     <BlogLayout>
-      <div className=""></div>
+      <Head>
+        <title>{postData.title}</title>
+        <meta name="description" content={postData.desc} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="">{postData.date}</div>
     </BlogLayout>
   );
 };
 
 export default BlogPost;
 
+// Get paths for individual Posts
 export const getStaticPaths = () => {
   const paths = getPostsSlug();
 
   return {
     paths,
     fallback: false,
+  };
+};
+
+// Get post data for the current selected post
+export const getStaticProps = async ({ params }) => {
+  const postData = getPostData(params.slug);
+
+  return {
+    props: {
+      postData,
+    },
   };
 };
