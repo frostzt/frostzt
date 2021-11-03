@@ -2,17 +2,17 @@ import React from "react";
 import Head from "next/head";
 
 // Interfaces
-import { PostMetaData } from "../Interfaces/Posts.interface";
+import { PostMetaData } from "../../Interfaces/Posts.interface";
 
 // Lib
-import { getSortedPost } from "../lib/posts";
+import { getSortedPost } from "../../lib/posts";
 
 // Components
-import BlogBrief from "../Components/BlogStuff/BlogBrief/BlogBrief";
-import NavigationBar from "../Components/NavigationBar/NavigationBar";
+import BlogBrief from "../../Components/BlogStuff/BlogBrief/BlogBrief";
+import NavigationBar from "../../Components/NavigationBar/NavigationBar";
 
 // Styles
-import styles from "../styles/blog.module.scss";
+import styles from "../../styles/blog.module.scss";
 
 interface Props {
   allPostsData: PostMetaData[];

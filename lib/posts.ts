@@ -2,6 +2,8 @@ import fs from "fs";
 import * as path from "path";
 import matter from "gray-matter";
 import { v4 as uuidv4 } from "uuid";
+import remark from "remark";
+import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -63,15 +65,20 @@ export const getPostsSlug = () => {
  * @param slug string, slug of the post
  * @returns PostData
  */
-export const getPostData = (slug: string) => {
+export const getPostData = async (slug: string) => {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf-8");
 
   // Parse meta data
   const matterResult = matter(fileContents);
 
+  // Convert md to html
+  const processedContent = await remark().use(html).process(matterResult.content);
+  const contentHtml = processedContent.toString();
+
   return {
     slug,
+    contentHtml,
     ...matterResult.data,
   };
 };

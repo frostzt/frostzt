@@ -27,7 +27,7 @@ const BlogPost: React.FC<Props> = ({ postData }) => {
         <meta name="description" content={postData.desc} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="">{postData.date}</div>
+      {/* <div className={}>{postData.date}</div> */}
     </BlogLayout>
   );
 };
@@ -46,7 +46,7 @@ export const getStaticPaths = () => {
 
 // Get post data for the current selected post
 export const getStaticProps = async ({ params }) => {
-  const postData = getPostData(params.slug);
+  const postData = await getPostData(params.slug);
 
   return {
     props: {
