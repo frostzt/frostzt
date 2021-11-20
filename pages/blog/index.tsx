@@ -26,16 +26,18 @@ const Blog: React.FC<Props> = ({ allPostsData }) => {
         <meta name="description" content="Sourav Singh Rawat's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavigationBar />
-      <h1 className={styles.title}>BLOG</h1>
-      <p className={styles.title__sub}>
-        I love writing things not only about technology and programming in general but other things
-        as well. So expect quite a lot of things here!
-      </p>
-      <div className={styles.blogs}>
-        {allPostsData.map((meta) => (
-          <BlogBrief key={meta.id} title={meta.title} desc={meta.desc} />
-        ))}
+      <div className={styles.wrapper}>
+        <NavigationBar />
+        <h1 className={styles.title}>BLOG</h1>
+        <p className={styles.title__sub}>
+          I love writing things not only about technology and programming in general but other
+          things as well. So expect quite a lot of things here!
+        </p>
+        <div className={styles.blogs}>
+          {allPostsData.map((meta) => (
+            <BlogBrief key={meta.id} title={meta.title} desc={meta.desc} />
+          ))}
+        </div>
       </div>
     </div>
   );
