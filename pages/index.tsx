@@ -11,7 +11,7 @@ interface Props {
 
 const Home: NextPage<Props> = ({ triggerMenu }) => {
   return (
-    <Container wrapperClass={styles.wrapper}>
+    <Container wrapperClass={styles.wrapper} containerClass={styles.container}>
       <Head>
         <title>frostzt | Portfolio</title>
         <meta name="description" content="frostzt's portfolio" />
@@ -19,6 +19,9 @@ const Home: NextPage<Props> = ({ triggerMenu }) => {
       </Head>
       <div className={styles.content}>
         <h1 className={styles.title}>Hi</h1>
+        <h2 className={styles.title_sub}>
+          I am Sourav<span className={styles.title_sub_dot}>.</span>
+        </h2>
       </div>
     </Container>
   );

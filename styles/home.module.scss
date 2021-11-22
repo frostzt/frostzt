@@ -2,10 +2,26 @@
   color: var(--text-color);
   background-color: #10002b;
 
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .content {
     .title {
       font-weight: 700;
       font-size: 8.2rem;
+      transform: translateX(-2.5px);
+
+      &_sub {
+        font-weight: 700;
+        font-size: 3.6rem;
+
+        &_dot {
+          color: var(--accent-color);
+        }
+      }
     }
   }
 }
