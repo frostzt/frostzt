@@ -1,18 +1,26 @@
+import React from 'react';
 import Head from 'next/head';
 import type { NextPage } from 'next';
 
 import styles from '../styles/home.module.scss';
+import Container from '../Layout/Container/Container';
 
-const Home: NextPage = () => {
+interface Props {
+  triggerMenu: () => void;
+}
+
+const Home: NextPage<Props> = ({ triggerMenu }) => {
   return (
-    <div className={styles.wrapper}>
+    <Container wrapperClass={styles.wrapper}>
       <Head>
         <title>frostzt | Portfolio</title>
         <meta name="description" content="frostzt's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.container}></div>
-    </div>
+      <div className={styles.content}>
+        <h1 className={styles.title}>Hi</h1>
+      </div>
+    </Container>
   );
 };
 
