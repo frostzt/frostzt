@@ -4,12 +4,14 @@ import type { NextPage } from 'next';
 
 import styles from '../styles/home.module.scss';
 import Container from '../Layout/Container/Container';
+import Header from '../PageComponents/Header/Header';
 
 interface Props {
+  menuVisible: boolean;
   triggerMenu: () => void;
 }
 
-const Home: NextPage<Props> = ({ triggerMenu }) => {
+const Home: NextPage<Props> = ({}) => {
   return (
     <Container wrapperClass={styles.wrapper} containerClass={styles.container}>
       <Head>
@@ -17,12 +19,7 @@ const Home: NextPage<Props> = ({ triggerMenu }) => {
         <meta name="description" content="frostzt's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.content}>
-        <h1 className={styles.title}>Hi</h1>
-        <h2 className={styles.title_sub}>
-          I am Sourav<span className={styles.title_sub_dot}>.</span>
-        </h2>
-      </div>
+      <Header />
     </Container>
   );
 };

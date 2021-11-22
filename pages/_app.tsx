@@ -13,8 +13,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <Fragment>
-      <GlobalMenu />
-      <Component triggerMenu={triggerMenu} {...pageProps} />
+      <GlobalMenu triggerMenu={triggerMenu} visible={showMenu} />
+      <Component menuVisible={showMenu} triggerMenu={triggerMenu} {...pageProps} />
     </Fragment>
   );
 };
