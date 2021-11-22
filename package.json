@@ -2,6 +2,7 @@
   "name": "frostzt",
   "private": true,
   "scripts": {
+    "clean": "rimraf .next",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

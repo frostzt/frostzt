@@ -8,6 +8,17 @@
   transition: all 0.4s;
   background-color: var(--accent-color);
 
+  .menuHandle {
+    left: 0;
+    top: 50%;
+    cursor: pointer;
+    position: fixed;
+    font-size: 2rem;
+    transition: all 0.4s;
+    color: var(--text-color);
+    transform: rotate(-90deg);
+  }
+
   .socialIcons {
     left: 45%;
     bottom: 1rem;
@@ -22,17 +33,6 @@
 
 .show {
   left: -10% !important;
-}
-
-.menuHandle {
-  left: 0;
-  top: 50%;
-  cursor: pointer;
-  position: fixed;
-  font-size: 2rem;
-  transition: all 0.4s;
-  color: var(--text-color);
-  transform: rotate(-90deg);
 }
 
 .showMenu {
