@@ -26,12 +26,29 @@
       &__item {
         font-size: 4.2rem;
         font-weight: 700;
+        position: relative;
         text-decoration: none;
         color: var(--text-color);
         transition: all 0.3s ease;
 
+        &::before {
+          top: 50%;
+          left: 0;
+          content: '';
+          width: 10%;
+          height: 50%;
+          z-index: -1;
+          position: absolute;
+          transition: all 0.3s ease;
+          background-color: var(--background-color);
+        }
+
         &:hover {
           transform: translateX(2rem);
+
+          &::before {
+            width: 100%;
+          }
         }
       }
     }
