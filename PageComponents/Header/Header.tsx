@@ -1,15 +1,19 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
 import styles from './Header.module.scss';
+import { childVariant, parentVariant } from './Header.variants';
 
 const Header: React.FC = () => {
   return (
-    <div className={styles.content}>
-      <h1 className={styles.title}>Hi</h1>
-      <h2 className={styles.title_sub}>
+    <motion.div className={styles.content} variants={parentVariant} initial="initial" animate="visible">
+      <motion.h1 variants={childVariant} className={styles.title}>
+        Hi
+      </motion.h1>
+      <motion.h2 variants={childVariant} className={styles.title_sub}>
         I am Sourav<span className={styles.title_sub_dot}>.</span>
-      </h2>
-    </div>
+      </motion.h2>
+    </motion.div>
   );
 };
 

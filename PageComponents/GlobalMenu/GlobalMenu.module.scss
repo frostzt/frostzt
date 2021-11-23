@@ -8,6 +8,35 @@
   transition: all 0.4s;
   background-color: var(--accent-color);
 
+  .main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .list {
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+
+      & > *:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      &__item {
+        font-size: 4.2rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateX(2rem);
+        }
+      }
+    }
+  }
+
   .menuHandle {
     left: 0;
     top: 50%;
@@ -36,5 +65,5 @@
 }
 
 .showMenu {
-  left: 88%;
+  left: 88% !important;
 }
