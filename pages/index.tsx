@@ -5,6 +5,7 @@ import type { NextPage } from 'next';
 import styles from '../styles/home.module.scss';
 import Container from '../Layout/Container/Container';
 import Header from '../PageComponents/Header/Header';
+import Details from '../PageComponents/Details/Details';
 
 interface Props {
   menuVisible: boolean;
@@ -20,6 +21,7 @@ const Home: NextPage<Props> = ({}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Details />
     </Container>
   );
 };

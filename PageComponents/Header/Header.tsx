@@ -2,7 +2,7 @@ import React from 'react';
 
 import { motion } from 'framer-motion';
 import styles from './Header.module.scss';
-import { childVariant, parentVariant } from './Header.variants';
+import { childVariant, parentVariant } from '../../framer-variants/BasicDropAnim.variant';
 
 const Header: React.FC = () => {
   return (
