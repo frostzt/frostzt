@@ -1,22 +1,17 @@
-import React, { Fragment, useState } from 'react';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
+import { ChakraProvider } from '@chakra-ui/react';
 
-import '../styles/globals.scss';
-import GlobalMenu from '../PageComponents/GlobalMenu/GlobalMenu';
+import theme from '../lib/theme';
+import Layout from '../components/layouts/main';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const triggerMenu = () => {
-    setShowMenu((prevState) => !prevState);
-  };
-
+const App = ({ Component, pageProps, router }: AppProps) => {
   return (
-    <Fragment>
-      <GlobalMenu triggerMenu={triggerMenu} visible={showMenu} />
-      <Component menuVisible={showMenu} triggerMenu={triggerMenu} {...pageProps} />
-    </Fragment>
+    <ChakraProvider theme={theme}>
+      <Layout router={router}>
+        <Component key={router.route} {...pageProps} />
+      </Layout>
+    </ChakraProvider>
   );
 };
 
-export default MyApp;
+export default App;
