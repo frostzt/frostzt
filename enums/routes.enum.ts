@@ -1,7 +1,7 @@
 enum AppRoutes {
   PROJECTS = '/projects',
   BLOG = '/blog',
-  HOME = '/home',
+  HOME = '/',
 }
 
 export default AppRoutes;

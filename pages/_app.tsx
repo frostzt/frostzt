@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import { AnimatePresence } from 'framer-motion';
 import { ChakraProvider } from '@chakra-ui/react';
 
 import theme from '../lib/theme';
@@ -8,7 +9,9 @@ const App = ({ Component, pageProps, router }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <Layout router={router}>
-        <Component key={router.route} {...pageProps} />
+        <AnimatePresence exitBeforeEnter initial={true}>
+          <Component key={router.route} {...pageProps} />
+        </AnimatePresence>
       </Layout>
     </ChakraProvider>
   );

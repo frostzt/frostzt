@@ -18,6 +18,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 import Logo from '../Logo/Logo';
 import LinkItem from './LinkItem';
+import AppRoutes from '../../enums/routes.enum';
 import ThemeToggle from '../layouts/themeToggle';
 
 interface NavbarProps {
@@ -51,10 +52,10 @@ const Navbar: React.FC<NavbarProps> = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/projects" path={path}>
+          <LinkItem href={AppRoutes.PROJECTS} path={path}>
             Projects
           </LinkItem>
-          <LinkItem href="/blog" path={path}>
+          <LinkItem href={AppRoutes.BLOG} path={path}>
             Blog
           </LinkItem>
         </Stack>
@@ -64,13 +65,13 @@ const Navbar: React.FC<NavbarProps> = props => {
             <Menu>
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
               <MenuList>
-                <NextLink href="/" passHref>
+                <NextLink href={AppRoutes.HOME} passHref>
                   <MenuItem as={Link}>Home</MenuItem>
                 </NextLink>
-                <NextLink href="/projects" passHref>
+                <NextLink href={AppRoutes.PROJECTS} passHref>
                   <MenuItem as={Link}>Projects</MenuItem>
                 </NextLink>
-                <NextLink href="/blog" passHref>
+                <NextLink href={AppRoutes.BLOG} passHref>
                   <MenuItem as={Link}>Blog</MenuItem>
                 </NextLink>
               </MenuList>
