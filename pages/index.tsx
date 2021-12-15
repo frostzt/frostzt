@@ -1,7 +1,19 @@
 import React from 'react';
 import NextLink from 'next/link';
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Container, Box, Heading, Image, useColorModeValue, Button } from '@chakra-ui/react';
+import { IoLogoTwitter, IoLogoGithub } from 'react-icons/io5';
+import {
+  Container,
+  Box,
+  Heading,
+  Image,
+  useColorModeValue,
+  Button,
+  Icon,
+  List,
+  ListItem,
+  Link,
+} from '@chakra-ui/react';
 
 import AppRoutes from '../enums/routes.enum';
 import Layout from '../components/layouts/article';
@@ -78,6 +90,28 @@ const Home = () => {
             <BioYear>2021 to present</BioYear>
             Looking for opportunities and working on ideas!
           </BioSection>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Find me
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/frostzt" target="_blank" rel="noreferrer">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>
+                  @frostzt
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://twitter.com/souravsrawat" target="_blank" rel="noreferrer">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoTwitter} />}>
+                  @souravsrawat
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
         </Section>
       </Container>
     </Layout>

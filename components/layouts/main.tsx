@@ -3,7 +3,9 @@ import Head from 'next/head';
 import { Router } from 'next/router';
 import { Box, Container } from '@chakra-ui/layout';
 
+import NoSsr from './no-ssr';
 import Navbar from '../Navbar/Navbar';
+import LowPolyIsland from '../3DComponents/low-poly-island';
 
 interface Props {
   router: Router;
@@ -19,6 +21,9 @@ const Main: React.FC<Props> = ({ children, router }) => {
       </Head>
       <Navbar path={router.asPath} />
       <Container maxW="container.md" pt={14}>
+        <NoSsr>
+          <LowPolyIsland />
+        </NoSsr>
         {children}
       </Container>
     </Box>

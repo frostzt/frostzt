@@ -1,11 +1,11 @@
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
 
+import Layout from '../components/layouts/article';
 import Section from '../components/Section/Section';
 import { ProjectGridItem } from '../components/CustomCoreComponents/GridItem';
 
 // Images
 import weeeeThumbnail from '../public/images/projects/weeee-overview.png';
-import Layout from '../components/layouts/article';
 
 const Projects = () => {
   return (
@@ -17,7 +17,7 @@ const Projects = () => {
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
-            <ProjectGridItem id="Weeee" title="Weeee" thumbnail={weeeeThumbnail}>
+            <ProjectGridItem id="weeee" title="Weeee" thumbnail={weeeeThumbnail}>
               Manage team, projects, and everything you need in just one place. Or should I say Management made easier!
             </ProjectGridItem>
           </Section>
