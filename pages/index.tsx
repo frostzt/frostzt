@@ -63,7 +63,7 @@ const Home = () => {
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href={AppRoutes.PROJECTS}>
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              <Button rightIcon={<ChevronRightIcon />} colorScheme="orange">
                 Projects
               </Button>
             </NextLink>
