@@ -7,26 +7,26 @@ import ProjectMeta from '../../components/Project/ProjectMeta';
 import ProjectTitle from '../../components/Project/ProjectTitle';
 import Paragraph from '../../components/CustomCoreComponents/Paragraph';
 
-const ProjectWeeee: React.FC = () => {
+const ProjectNoted: React.FC = () => {
   return (
-    <Layout title="Weeee">
+    <Layout title="Noted">
       <Container>
         <ProjectTitle>
-          Weeee <Badge>2021</Badge>
+          Noted <Badge>2021</Badge>
         </ProjectTitle>
         <Paragraph>
-          Manage team, projects, and everything you need in just one place. Or should I say Management made easier!
+          Yet another <span style={{ textDecoration: 'line-through' }}>breathtaking</span> note-taking web app!
         </Paragraph>
         <List ml={4} my={4}>
           <ListItem>
             <ProjectMeta>Live Demo</ProjectMeta>
-            <Link href="https://weeee.vercel.app" target="_blank" rel="noreferrer">
-              https://weeee.vercel.app <ExternalLinkIcon mx="2px" />
+            <Link href="https://getnoted.vercel.app" target="_blank" rel="noreferrer">
+              https://getnoted.vercel.app <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
           <ListItem>
             <ProjectMeta>Stack</ProjectMeta>
-            Nextjs, Nestjs, MikroORM, TypeScript, PostgreSQL
+            Nextjs, Nestjs, TypeORM, TypeScript, PostgreSQL, TailwindCSS
           </ListItem>
         </List>
       </Container>
@@ -34,4 +34,4 @@ const ProjectWeeee: React.FC = () => {
   );
 };
 
-export default ProjectWeeee;
+export default ProjectNoted;
