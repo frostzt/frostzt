@@ -1,5 +1,5 @@
 import { SearchIcon } from '@chakra-ui/icons';
-import { Box, Container, Heading, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react';
+import { Box, Container, Heading, Input, InputGroup, InputRightElement, Text, useColorMode } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
 import BlogPost from '../../components/Blog/BlogPost';
@@ -21,6 +21,11 @@ interface BlogIndexProps {
 
 const Blog: React.FC<BlogIndexProps> = ({ posts }) => {
   const [searchValue, setSearchValue] = useState('');
+  const { colorMode } = useColorMode();
+  const primaryTextColor = {
+    light: `gray.600`,
+    dark: `whiteAlpha.300`,
+  };
 
   const filteredBlogPosts = posts
     .sort((a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt)))
@@ -41,6 +46,7 @@ const Blog: React.FC<BlogIndexProps> = ({ posts }) => {
             aria-label="Search by post title"
             placeholder="Thoughts on life!"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
+            borderColor={primaryTextColor[colorMode]}
           />
           <InputRightElement>
             <SearchIcon />
