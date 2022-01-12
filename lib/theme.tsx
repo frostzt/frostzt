@@ -28,7 +28,7 @@ const components = {
     // @ts-expect-error props has type any
     baseStyle: props => ({
       color: mode('#e63946', '#e63946')(props),
-      textUnderlineOffset: 3,
+      textDecoration: 'none',
     }),
   },
 };

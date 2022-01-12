@@ -2,13 +2,14 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Head from 'next/head';
 import React from 'react';
+import MDXComponents from '../../components/MDXComponents/MDXComponents';
 import { getFileBySlug, getFiles } from '../../lib/mdx';
 
 interface BlogPostProps {
   post: {
     content: string;
-    contentSerialized: any;
-    matterDataSerialized: MDXRemoteSerializeResult<Record<string, unknown>>;
+    contentSerialized: MDXRemoteSerializeResult<Record<string, unknown>>;
+    matterData: string;
     slug: string;
     metaData: {
       content: string;
@@ -28,7 +29,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
         <title>{metaData.title}</title>
         <meta name="description" content={metaData.content} />
       </Head>
-      <MDXRemote compiledSource={contentSerialized.compiledSource} />
+      <MDXRemote components={MDXComponents} compiledSource={contentSerialized.compiledSource} />
     </div>
   );
 };
@@ -36,7 +37,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
 export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getFiles('tutorials');
+  const posts = await getFiles('posts');
 
   return {
     paths: posts.map(p => ({
@@ -52,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug;
   if (slug) {
     try {
-      const post = await getFileBySlug('tutorials', slug as string);
+      const post = await getFileBySlug('posts', slug as string);
       return {
         props: {
           post,
