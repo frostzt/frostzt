@@ -1,7 +1,11 @@
 import fs from 'fs';
 import matter from 'gray-matter';
+import mdxPrism from 'mdx-prism';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
+import remarkAutoLinkHeadings from 'remark-autolink-headings';
+import remarkCodeTitles from 'remark-code-titles';
+import remarkSlug from 'remark-slug';
 
 const root = process.cwd();
 
@@ -26,7 +30,12 @@ export async function getFileBySlug(type: string, slug?: string) {
     : fs.readFileSync(path.join(root, 'data', `${type}.mdx`), 'utf-8');
 
   const { data: metaData, content } = matter(source);
-  const contentSerialized = await serialize(content);
+  const contentSerialized = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [remarkAutoLinkHeadings, remarkSlug, remarkCodeTitles],
+      rehypePlugins: [mdxPrism],
+    },
+  });
 
   return {
     content,
