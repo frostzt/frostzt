@@ -7,44 +7,37 @@ content: 'When it comes to creating full-stack applications that require high up
 category: 'tutorials'
 ---
 
-<h1 style={{ fontSize: '2.8rem', fontWeight: '900' }}>Don't ignore Error Handling.</h1>
+# Don't ignore Error handling.
+
 <sub style={{ fontSize: '1.2rem', fontWeight: '300', marginTop: '1rem' }}>
   The core stuff that most of the tutorials on the internet ignore.
 </sub>
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '3rem' }}>
-  When it comes to creating full-stack applications that require high up-time and high availability, managing and
-  handling errors properly becomes more of a necessity. If your application does not have a good error handling
-  architecture then its already doomed.
-</p>
+When it comes to creating full-stack applications that require high up-time and high availability, managing and
+handling errors properly becomes more of a necessity. If your application does not have a good error handling
+architecture then its already doomed.
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem' }}>
-  Error handling is more important than it seems because, first that it helps you, yes you, the developer to debug your
-  application much easily, and second that properly handled errors gives you a sense of peace of mind that if something
-  messes up you have a fallback mechanism that'll save your day.
-</p>
+Error handling is more important than it seems because, first that it helps you, yes you, the developer to debug your
+application much easily, and second that properly handled errors gives you a sense of peace of mind that if something
+messes up you have a fallback mechanism that'll save your day.
 
 <h2 style={{ marginTop: '2rem', fontWeight: '700', fontSize: '2rem' }}>What and why of "Errors"</h2>
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem' }}>
-  Why do we need Errors in the first place? Applications are designed and always kept maintained so that they are less
-  error prone, however discrepancies occur.
-</p>
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem' }}>
-  Another thing to note here is that an "error" must not always be an "exception". The difference between the terms is
-  really important. In layman words consider an "exception" to be something that is application related, say something
-  wrong in the code. Whereas, an error might be much broader, say any invalid input by the user. It won't crash or break
-  your application but still is an error.
-</p>
+Why do we need Errors in the first place? Applications are designed and always kept maintained so that they are less error
+prone, however discrepancies occur.
+
+Another thing to note here is that an "error" must not always be an "exception". The difference between the terms is
+really important. In layman words consider an "exception" to be something that is application related, say something
+wrong in the code. Whereas, an error might be much broader, say any invalid input by the user. It won't crash or break
+your application but still is an error.
 
 <h2 style={{ marginTop: '2rem', fontWeight: '700', fontSize: '2rem' }}>Errors while creating errors</h2>
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Let's think about a typical scenario, you have an application that is built with modern (M/P)ERN Stack (databases are
-  your choice). You would have several routes and several controllers handling those routes for you. However you know
-  this very well that things can break, say you have a route that checks if a user entered a valid string.
-</p>
 
-```js
+Let's think about a typical scenario, you have an application that is built with modern (M/P)ERN Stack (databases are
+your choice). You would have several routes and several controllers handling those routes for you. However you know
+this very well that things can break, say you have a route that checks if a user entered a valid string.
+
+```typescript
 import { Request, Response } from 'express';
 
 const route = (req: Request, res: Response) => {
@@ -59,33 +52,26 @@ const route = (req: Request, res: Response) => {
 }
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  The code above seems quite good and to be honest will work; however, there is a flaw. The issue is the <i>'send'</i>{' '}
-  part. Especially where we send <i>"Not Valid"</i> is not in a correct or more importantly in a predefined format.
-  Having a predefined format helps a lot, especially when creating the frontend for your application, it will save you a
-  headache.
-</p>
+The code above seems quite good and to be honest will work; however, there is a flaw. The issue is the <i>'send'</i>
+part. Especially where we send <i>"Not Valid"</i> is not in a correct or more importantly in a predefined format.
+Having a predefined format helps a lot, especially when creating the frontend for your application, it will save you a
+headache.
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Now think that you have several other routes and they are creating errors in their own fashion. This is a horrible
-  approach since every route will have its own errors and the frontend will have to implement these errors separately.
-  Which makes developing frontend more painful since you'll have to modify the logic every time you get data from a
-  certain endpoint.
-</p>
+Now think that you have several other routes and they are creating errors in their own fashion. This is a horrible
+approach since every route will have its own errors and the frontend will have to implement these errors separately.
+Which makes developing frontend more painful since you'll have to modify the logic every time you get data from a
+certain endpoint.
 
 <h2 style={{ marginTop: '2rem', fontWeight: '700', fontSize: '2rem' }}>A better approach!</h2>
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Worry not my friends because there is a better way to deal with this. For this I'll be using Expressjs, which is a
-  Nodejs framework, however this can be implemented it any framework or language of your choice. As long as you read
-  their documentation properly and take your time to dig a bit deeper.
-</p>
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Expressjs provides a Error handling middlware, the middlware is <i>possibly</i> the only middlware in express that
-  takes 4 arguments.
-</p>
+Worry not my friends because there is a better way to deal with this. For this I'll be using Expressjs, which is a
+Nodejs framework, however this can be implemented it any framework or language of your choice. As long as you read
+their documentation properly and take your time to dig a bit deeper.
 
-```js
+Expressjs provides a Error handling middlware, the middlware is <i>possibly</i> the only middlware in express that
+takes 4 arguments.
+
+```typescript
 import { Request, Response, NextFunction } from 'express';
 
 const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -97,12 +83,10 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
 export default errorHandler;
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Now what we can do is create the function above and pass it at the very bottom of your express application as a global
-  error handler.
-</p>
+Now what we can do is create the function above and pass it at the very bottom of your express application as a global
+error handler.
 
-```js
+```typescript
 const app = express();
 
 // All the other routes and everything
@@ -115,14 +99,12 @@ app.listen(5000, () => {
 });
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  However its not fully ready yet. Remember that this middlware can't do anything on its own we need to configure it
-  first. Now first we need to define the structure of the errors that we'll be throwing. This serializes the errors
-  structure across entire application and helps us be consistent with it. For this we'll be using a simple object that
-  will contain an array of errors with a message and optional field property.
-</p>
+However its not fully ready yet. Remember that this middlware can't do anything on its own we need to configure it
+first. Now first we need to define the structure of the errors that we'll be throwing. This serializes the errors
+structure across entire application and helps us be consistent with it. For this we'll be using a simple object that
+will contain an array of errors with a message and optional field property.
 
-```js
+```typescript
 // This is what the error will look like
 {
   [
@@ -132,19 +114,15 @@ app.listen(5000, () => {
 }
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Now the good part with the structure above is that you can loop over the array and display the errors one-by-one, this
-  also helps the frontend since it knows no matter what the errors, they will have that same structure so we need to
-  create just one component and reuse it everywhere.
-</p>
+Now the good part with the structure above is that you can loop over the array and display the errors one-by-one, this
+also helps the frontend since it knows no matter what the errors, they will have that same structure so we need to
+create just one component and reuse it everywhere.
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Now that won't just work out by itself, we need to setup some Errors and by that I mean classes. To give you can idea
-  of how we can create errors in express with this approach and how Express will handle it for us, take a look down
-  below.
-</p>
+Now that won't just work out by itself, we need to setup some Errors and by that I mean classes. To give you can idea
+of how we can create errors in express with this approach and how Express will handle it for us, take a look down
+below.
 
-```js
+```typescript
 const controller = (req: Request, res: Response) => {
   // Some logic for the controller and say it fails
   if (fails) {
@@ -153,14 +131,12 @@ const controller = (req: Request, res: Response) => {
 };
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  The error thrown will be caught by express and will be passed to our globalErrorHandler. Now there are few things that
-  we need to keep in mind, first that errors can be of two types, either they can be errors generated by the code say
-  something failed; good old user input type. However there are uncaught exceptions as well. Errors that we have no idea
-  of. So we also need to make sure that we don't leak any details.
-</p>
+The error thrown will be caught by express and will be passed to our globalErrorHandler. Now there are few things that
+we need to keep in mind, first that errors can be of two types, either they can be errors generated by the code say
+something failed; good old user input type. However there are uncaught exceptions as well. Errors that we have no idea
+of. So we also need to make sure that we don't leak any details.
 
-```js
+```typescript
 import { Request, Response, NextFunction } from 'express';
 
 const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -168,17 +144,15 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
 };
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  The statement above will get fired regardless of what error. It is more of a generic message that is sent back to the
-  frontend if something happens which is unhandled. Let's start by creating a "customError" class. We're creating this
-  as an abstract class so that we can inherit this class (we're using TypeScript can be done in js without abstract
-  keyword however responsibility is yours) and create errors.
-</p>
+The statement above will get fired regardless of what error. It is more of a generic message that is sent back to the
+frontend if something happens which is unhandled. Let's start by creating a "customError" class. We're creating this
+as an abstract class so that we can inherit this class (we're using TypeScript can be done in js without abstract
+keyword however responsibility is yours) and create errors.
 
-```js
+```typescript
 // this class must be extended whenever creating a custom error
 export default abstract class CustomError extends Error {
-  abstract statusCode: number;  // Extra stuff I added you can create more but be consistent and logical
+  abstract statusCode: number; // Extra stuff I added you can create more but be consistent and logical
 
   constructor(message: string) {
     super(message);
@@ -189,19 +163,15 @@ export default abstract class CustomError extends Error {
 }
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Above we're extending the Error object because, first it must be an Error to be recognized as an error to Express
-  (remember we set the type of err as Error in our error handler), and second we're using an abstract class here.
-  Abstract classes can only be inherited they can't be initialized (yes I am not using an interface). Also note that we
-  have a method called "serializeErrors" that emmits out the structure of our error, this will ensure that every error
-  class we create will have the same error structure.
-</p>
+Above we're extending the Error object because, first it must be an Error to be recognized as an error to Express
+(remember we set the type of err as Error in our error handler), and second we're using an abstract class here.
+Abstract classes can only be inherited they can't be initialized (yes I am not using an interface). Also note that we
+have a method called "serializeErrors" that emmits out the structure of our error, this will ensure that every error
+class we create will have the same error structure.
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Let's create our very first error and see how can we throw it.
-</p>
+Let's create our very first error and see how can we throw it.
 
-```js
+```typescript
 import CustomError from './CustomError';
 
 export default class BadRequestError extends CustomError {
@@ -218,13 +188,11 @@ export default class BadRequestError extends CustomError {
 }
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Again here we're creating a BadRequestError out of CustomError. And this class also has to implement the
-  serializeErrors method and make sure that it returns the exact same structure of the error. Now this can be used
-  inside of our code. However we need to add one more thing before we start using it.
-</p>
+Again here we're creating a BadRequestError out of CustomError. And this class also has to implement the
+serializeErrors method and make sure that it returns the exact same structure of the error. Now this can be used
+inside of our code. However we need to add one more thing before we start using it.
 
-```js
+```typescript
 import { Request, Response, NextFunction } from 'express';
 import CustomError from './customError';
 
@@ -237,18 +205,14 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
 };
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  What we did above is to verify if the error thrown was an error which is derived from our CustomError class. And if it
-  was then we know that it must also contain a serializeErrors method that will return the errors in just the way we
-  want them. Also note that I am using the statusCode here that I made a attribute in my CustomError class. Also note
-  that we're returning it because we don't want the flow to continue.
-</p>
+What we did above is to verify if the error thrown was an error which is derived from our CustomError class. And if it
+was then we know that it must also contain a serializeErrors method that will return the errors in just the way we
+want them. Also note that I am using the statusCode here that I made a attribute in my CustomError class. Also note
+that we're returning it because we don't want the flow to continue.
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  Now we're free to use this as we like!
-</p>
+Now we're free to use this as we like!
 
-```js
+```typescript
 const controller = (req: Request, res: Response) => {
   // Some logic for the controller and say it fails
   if (fails) {
@@ -257,27 +221,22 @@ const controller = (req: Request, res: Response) => {
 };
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  You might be pretty happy that this worked or maybe not?! Because you tried throwing it inside of a async block (if
-  you haven't, try it). You'll see that it just doesn't work.
-</p>
+You might be pretty happy that this worked or maybe not?! Because you tried throwing it inside of a async block (if
+you haven't, try it). You'll see that it just doesn't work.
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  The reason for that is actually framework dependent, for express if the error is thrown inside of a controller that
-  returns a Promise (remember async functions don't directly resolve but they return a promise which WILL resolve) the
-  error must be thrown inside the next function that it provides. For that we'll just use a library called
-  "express-async-errors" just import it at top level of your app and you're done!
-  <i style={{ color: 'orangered' }}>
-    <a href="https://www.npmjs.com/package/express-async-errors"> Express Async Errors on NPM</a>
-  </i>
-</p>
+The reason for that is actually framework dependent, for express if the error is thrown inside of a controller that
+returns a Promise (remember async functions don't directly resolve but they return a promise which WILL resolve) the
+error must be thrown inside the next function that it provides. For that we'll just use a library called
+"express-async-errors" just import it at top level of your app and you're done!
 
-```js
+<i style={{ color: 'orangered' }}>
+  <a href="https://www.npmjs.com/package/express-async-errors"> Express Async Errors on NPM</a>
+</i>
+
+```typescript
 // At the top of your app.ts or index.ts (must be your application entry point)
 import 'express-async-errors';
 ```
 
-<p style={{ fontSize: '1.4rem', fontWeight: '400', marginTop: '2rem', marginBottom: '2rem' }}>
-  And there you go! Now you have a better error handling architecture ready. And this makes working on the frontend 10x
-  easier. Liked this? Then make sure to share this.
-</p>
+And there you go! Now you have a better error handling architecture ready. And this makes working on the frontend 10x
+easier. Liked this? Then make sure to share this.
