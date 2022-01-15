@@ -5,6 +5,7 @@ import Section from '../../components/Section/Section';
 import { ProjectGridItem } from '../../components/CustomCoreComponents/GridItem';
 
 // Images
+import letitThumbnail from '../../public/images/projects/letit-overview.png';
 import weeeeThumbnail from '../../public/images/projects/weeee-overview.png';
 import notedThumbnail from '../../public/images/projects/noted-overview.png';
 
@@ -26,6 +27,11 @@ const Projects = () => {
             <ProjectGridItem id="noted" title="Noted" thumbnail={notedThumbnail}>
               Yet another <span style={{ textDecoration: 'line-through' }}>breathtaking</span> note-taking web
               application. Secure, small, and dead simple to use!
+            </ProjectGridItem>
+          </Section>
+          <Section>
+            <ProjectGridItem id="letit" title="Letit" thumbnail={letitThumbnail}>
+              An application just like Reddit, built for Letting out your frustration.
             </ProjectGridItem>
           </Section>
         </SimpleGrid>
