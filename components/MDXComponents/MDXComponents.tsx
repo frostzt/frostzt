@@ -18,6 +18,7 @@ import NextLink from 'next/link';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/nightOwl';
 import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
+import CategoryTag, { CategoryTagProps } from '../Blog/CategoryTags';
 
 const ChakraHighlight = chakra(Highlight, {
   shouldForwardProp: prop => ['Prism', 'theme', 'code', 'language', 'children'].includes(prop),
@@ -206,6 +207,7 @@ const MDXComponents = {
   ol: (props: BoxProps) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
   li: (props: BoxProps) => <Box as="li" pb={1} {...props} />,
   blockquote: Quote,
+  CategoryTag: (props: CategoryTagProps) => <CategoryTag {...props} />,
 };
 
 export default MDXComponents;

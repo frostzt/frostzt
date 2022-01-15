@@ -7,11 +7,10 @@ interface BlogPostProps {
   title: string;
   content: string;
   publishedAt: string;
-  category: string;
   slug: string;
 }
 
-const BlogPost: React.FC<BlogPostProps> = ({ title, content, publishedAt, category, slug }) => {
+const BlogPost: React.FC<BlogPostProps> = ({ title, content, publishedAt, slug }) => {
   const { colorMode } = useColorMode();
   const primaryTextColor = {
     light: `gray.800`,
@@ -21,7 +20,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, content, publishedAt, catego
     light: 'gray.700',
     dark: 'gray.300',
   };
-  console.log(category);
 
   return (
     <NextLink href="/blog/[slug]" as={`/blog/${slug}`} passHref>

@@ -4,14 +4,20 @@ sub: 'The core stuff that most of the tutorials on the internet ignore.'
 slug: 'errors-made-easy'
 publishedAt: '2022-01-12'
 content: 'When it comes to creating full-stack applications that require high up-time and high availability, managing and handling errors properly becomes more of a necessity...'
-category: 'tutorials'
 ---
+
+import CategoryTag from '../../components/Blog/CategoryTags.tsx';
 
 # Don't ignore Error handling.
 
-<sub style={{ fontSize: '1.2rem', fontWeight: '300', marginTop: '1rem' }}>
+<p style={{ fontSize: '1.2rem', fontWeight: '300', marginTop: '1rem' }}>
   The core stuff that most of the tutorials on the internet ignore.
-</sub>
+</p>
+
+<div style={{ display: 'flex' }}>
+  <CategoryTag category="Architecture" color="#e63947" />
+  <CategoryTag category="Tutorial" color="#6930c3" />
+</div>
 
 When it comes to creating full-stack applications that require high up-time and high availability, managing and
 handling errors properly becomes more of a necessity. If your application does not have a good error handling
@@ -21,7 +27,7 @@ Error handling is more important than it seems because, first that it helps you,
 application much easily, and second that properly handled errors gives you a sense of peace of mind that if something
 messes up you have a fallback mechanism that'll save your day.
 
-<h2 style={{ marginTop: '2rem', fontWeight: '700', fontSize: '2rem' }}>What and why of "Errors"</h2>
+## What and why of "Errors"
 
 Why do we need Errors in the first place? Applications are designed and always kept maintained so that they are less error
 prone, however discrepancies occur.
@@ -31,7 +37,7 @@ really important. In layman words consider an "exception" to be something that i
 wrong in the code. Whereas, an error might be much broader, say any invalid input by the user. It won't crash or break
 your application but still is an error.
 
-<h2 style={{ marginTop: '2rem', fontWeight: '700', fontSize: '2rem' }}>Errors while creating errors</h2>
+## Errors while creating errors
 
 Let's think about a typical scenario, you have an application that is built with modern (M/P)ERN Stack (databases are
 your choice). You would have several routes and several controllers handling those routes for you. However you know
@@ -62,7 +68,7 @@ approach since every route will have its own errors and the frontend will have t
 Which makes developing frontend more painful since you'll have to modify the logic every time you get data from a
 certain endpoint.
 
-<h2 style={{ marginTop: '2rem', fontWeight: '700', fontSize: '2rem' }}>A better approach!</h2>
+## A better approach!
 
 Worry not my friends because there is a better way to deal with this. For this I'll be using Expressjs, which is a
 Nodejs framework, however this can be implemented it any framework or language of your choice. As long as you read
