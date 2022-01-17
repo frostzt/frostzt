@@ -26,7 +26,7 @@ const Home = () => {
     <Layout>
       <Container>
         <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} align="center" mb={6}>
-          Hello I&apos;m a full-stack developer based in India!
+          A full-stack developer based in India!
         </Box>
 
         <Box display={{ md: 'flex' }}>

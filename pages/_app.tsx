@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Layout from '../components/layouts/main';
 import theme from '../lib/theme';
+import '../styles/global.css';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   return (

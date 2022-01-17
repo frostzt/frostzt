@@ -1,0 +1,172 @@
+---
+title: 'GraphQL, the new REST?'
+sub: 'Where did all the hype go suddenly?'
+slug: 'graphql-new-rest'
+publishedAt: '2022-01-17'
+content: 'The internet has never been better than today. Not only for consumers but developers too! Ever since Facebook created the GraphQL Specification for APIs, there was quite a lot of hype building around it.'
+---
+
+import CategoryTag from '../../components/Blog/CategoryTags.tsx';
+
+# GraphQL, the new REST?
+
+<p style={{ fontSize: '1.2rem', fontWeight: '300', marginTop: '1rem' }}>Where did all the hype go suddenly?</p>
+
+<div style={{ display: 'flex' }}>
+  <CategoryTag category="Technology" color="#4cc9f0" />
+</div>
+
+The internet has never been better than today. Not only for consumers but developers too! Ever since Facebook created the GraphQL Specification for APIs, there was quite a lot of hype building around it.
+
+Certainly GraphQL is one of the most amazing technology ever developed because it gives the client the power to tell the server what it needs and what not; therefore drastically reducing the response sizes and providing amazing user experience.
+
+Well if I was to talk all good about GraphQL there wouldn't have been a question mark '?' in the title! GraphQL is surely an amazing technology however it failed to build the market it was supposed to.
+
+## What is GraphQL?
+
+So if you're still worrying over, "Well yeah it came but I sticked with REST, what is it anyways?", fret not sailor, the boat has just started its journey. Let's see what the official site of [GraphQL](https://graphql.org/) has got to say about it?
+
+> GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+
+All in all think of it like a Querying langauge that allows you, the client to explicitly ask the server for data. In a normal REST approach generally a request is sent over an HTTP protocol, and the server sends back an HTTP response containing the data.
+
+In GraphQL however, the client sends a query which is then executed on the server allowing the server to map the exact demands that the client needs and send the data back over the response.
+
+## Why and when GraphQL?
+
+Don't be that guy who just uses the latest and greatest technology in literally everything he makes. There is a thinking process involved when you pick a technology to develop an application. And that's exactly what I want to talk about here.
+
+The bad part about REST APIs is that the client has nearly zero control over the type of response that it needs. If the endpoint says its gonna send you a butt ton of data, you're responsible to handle it.
+
+Think of this route that returns the user detials via `/me` endpoint.
+
+```typescript
+interface User {
+  name: string;
+  email: string;
+  picture: string;
+  username: string;
+  organization: Organization;
+}
+
+const me = async (req: Request, res: Response) => {
+  const user: User = // Find the user based on authentication pattern
+
+  return user;
+}
+```
+
+This returns the entire `User` object, even if just the name and email were needed. Well here is the same request but in GraphQL.
+
+```graphql
+query MeQuery {
+  me {
+    name
+    email
+  }
+}
+```
+
+That is one huge problem that GraphQL solves, since client can request what is exactly needs.
+
+Keeping that in mind, GraphQL is best used if you're designing things that might have a lot of data in them, however not all of it is required by the client at a time. This is save the user quite a good amount of data bandwidth.
+
+Another benefit that GraphQL offers is the definitely typed GraphQL schemas. GraphQL relies on schemas of its own written in GraphQL SDL (Schema Definition Language) which can provide direct insight into what sort of data is available.
+
+One other great part about GraphQL is that it can seemlessly aggregate data from multiple sources or APIs and provide it via just one endpoint. Also GraphQL only exposes one endpoint `/graphql` and the rest is done via queries or mutations.
+
+## Why not the new REST?
+
+Let's come to the question we originally proposed! If it is really so awesome why not use it everywhere?
+
+Well there are quite a bit of issues that I really don't like in GraphQL.
+
+### Performance
+
+Warning, this is controversial. However GraphQL does suffers from performance issues. Just think of it, you have an API that allows the client to tell what it exactly needs. Now this need of the client needs to be mapped on the server.
+
+When talking about this on the REST approach, it becomes easy since you already know just how big one request could possibly scale (after all you're explicitly returning the data). However in GraphQL this is not guarenteed, the user could ask for one information or a lot of information. Which is more than enough to crash your servers.
+
+Have a look at the query down below, let's say the client had some use case of several stuff and it asked for such a request.
+
+```graphql
+query GetComplexData($postId: String!) {
+  post(id: $postId) {
+    title
+    body
+    likes
+    author {
+      name
+      email
+    }
+    comments {
+      content
+      user {
+        name
+        email
+        posts {
+          title
+          snippet
+        }
+      }
+    }
+  }
+}
+```
+
+The monstrosity you're looking at above is a query fetching a post with a `postId` let's stay `xyz`, its maps its respective data and other stuff. Now let me explain first how horrible and how big of a nightmare this is.
+
+First thing to note is that `Post`, `User`, and `Comment` are possibly entities, which means that they have thier own schemas in database. Which means that for that above request you're making at least 3 requests to the database. Which is ok-ish in this case since we're requesting a lot of stuff.
+
+However, the that't not the bad part, what's bad is how this is queried against a database. Let's say that one user has 3 comments, therefore for that same user it will query the database 3 times. Which is horrible because if it is me I would post 5-6 comments on a post.
+
+GraphQL requests in real world scenarios tend to get complicated and there really isn't much you can do by itself, however there are tools like [Dataloader](https://github.com/graphql/dataloader) that can batch and cache requests.
+
+### Error Handling nightmare
+
+This is one of the most painful area of GraphQL. Error handling in REST architecture is quite easy as compaired to GraphQL. Errors thrown are quite dependent on what GraphQL library you're using. The most popular ones like Relay, Apollo, and URQL have completely different error structures sometimes.
+
+Have a look at a GraphQL error thrown down below:
+
+```json
+{
+  "data": {},
+  "errors": [
+    {
+      "message": "Multiple inputs are invalid",
+      "extensions": {
+        "invalidInputs": [
+          {
+            "code": "INVALID_EMAIL",
+            "message": "This email is invalid!"
+          },
+          {
+            "code": "INVALID_PASSWORD",
+            "message": "This password is invalid!"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Now that is an error is quite formatted, however the structure changes drastically depending on where it was thrown.
+
+There is a good talk on YouTube on how to handle errors in GraphQL, however that too involves making sure to keep things in check when creating the logic itself. However remember that it is not always possible to know every fail case and worse the edge cases.
+
+One more thing that I hate is that even when error is thrown the response you'll recieve will have a status code of `200`, which according to me isn't that bad but still something that can be worked upon.
+
+### Complexity
+
+This does not mean that GraphQL itself is complicated but rather that having GraphQL in small-scale applications is not recommended.
+
+Remember that creating a GraphQL API requires a lot of boilerplate code, meaning the schemas, the types, the inputs, and the handlers. Which kinda makes it bulky when writing small apps that can be done with 10-15 REST endpoints.
+
+Now this obviously doesn't mean that you should completely dump GraphQL, but there is a good difference between when its better and when it is completely rekked.
+
+## So GraphQL?
+
+Well, I still use GraphQL in quite a lot of projects that I make. But there is a good thinking process involved, at least plan before you start writing any code.
+
+GraphQL is surely one of the best technology that I have ever used and will continue using for the future to come. And I already assuming that most the problems that it has will solved in upcoming future.
