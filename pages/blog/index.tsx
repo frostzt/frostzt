@@ -1,9 +1,10 @@
+import dynamic from 'next/dynamic';
 import { SearchIcon } from '@chakra-ui/icons';
 import { Box, Container, Heading, Input, InputGroup, InputRightElement, Text, useColorMode } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
-import BlogPost from '../../components/Blog/BlogPost';
-import Layout from '../../components/layouts/article';
+const BlogPost = dynamic(() => import('../../components/Blog/BlogPost'));
+const Layout = dynamic(() => import('../../components/layouts/article'));
 import { getAllFilesFrontMatter } from '../../lib/mdx';
 
 interface IFilesMetaData {
