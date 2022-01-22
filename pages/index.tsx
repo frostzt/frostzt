@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 import NextLink from 'next/link';
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -16,9 +17,9 @@ import {
 } from '@chakra-ui/react';
 
 import AppRoutes from '../enums/routes.enum';
-import Layout from '../components/layouts/article';
-import Section from '../components/Section/Section';
-import Paragraph from '../components/CustomCoreComponents/Paragraph';
+const Layout = dynamic(() => import('../components/layouts/article'));
+const Section = dynamic(() => import('../components/Section/Section'));
+const Paragraph = dynamic(() => import('../components/CustomCoreComponents/Paragraph'));
 import { BioSection, BioYear } from '../components/CustomCoreComponents/Bio';
 
 const Home = () => {

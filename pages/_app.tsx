@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic';
 import { ChakraProvider } from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
-import Layout from '../components/layouts/main';
+const Layout = dynamic(() => import('../components/layouts/main'));
 import theme from '../lib/theme';
 import '../styles/global.css';
 

@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic';
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
 
-import Layout from '../../components/layouts/article';
-import Section from '../../components/Section/Section';
+const Layout = dynamic(() => import('../../components/layouts/article'));
+const Section = dynamic(() => import('../../components/Section/Section'));
 import { ProjectGridItem } from '../../components/CustomCoreComponents/GridItem';
 
 // Images

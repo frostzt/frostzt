@@ -1,11 +1,12 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react';
 
-import Layout from '../../components/layouts/article';
-import ProjectMeta from '../../components/Project/ProjectMeta';
-import ProjectTitle from '../../components/Project/ProjectTitle';
-import Paragraph from '../../components/CustomCoreComponents/Paragraph';
+const Layout = dynamic(() => import('../../components/layouts/article'));
+const ProjectMeta = dynamic(() => import('../../components/Project/ProjectMeta'));
+const ProjectTitle = dynamic(() => import('../../components/Project/ProjectTitle'));
+const Paragraph = dynamic(() => import('../../components/CustomCoreComponents/Paragraph'));
 
 const ProjectNoted: React.FC = () => {
   return (
