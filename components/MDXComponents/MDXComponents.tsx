@@ -72,8 +72,8 @@ const DocsHeading = (props: HeadingProps) => (
 const CustomLink = (props: LinkProps) => {
   const { colorMode } = useColorMode();
   const color = {
-    light: 'blue.500',
-    dark: 'blue.500',
+    light: 'orange.500',
+    dark: 'orange.500',
   };
 
   const href = props.href;
